@@ -1,34 +1,33 @@
 'use strict';
 
-var gulp = require('gulp')
-    , sass = require('gulp-sass')
-    , browserSync = require('browser-sync').create()
-    , reload = browserSync.reload
-    , concat = require('gulp-concat')
-    , uglify = require('gulp-uglifyjs')
-    , cssnano = require('gulp-cssnano')
-    , concatCss = require('gulp-concat-css')
-    , rename = require('gulp-rename')
-    , del = require('del')
-    , imagemin = require('gulp-imagemin')
-    , pngquant = require('imagemin-pngquant')
-    , cache = require('gulp-cache')
-    , autoprefixer = require('gulp-autoprefixer')
-    , sourcemaps = require('gulp-sourcemaps')
-    , fileinclude = require('gulp-file-include')
-    , markdown = require('markdown')
-    , htmlbeautify = require('gulp-html-beautify')
-    , fs = require('fs')
-    , modernizr = require('modernizr')
-    , config = require('./modernizr-config')
-    , replace = require('gulp-string-replace')
-    , strip = require('gulp-strip-comments')
-    , stripCssComments = require('gulp-strip-css-comments')
-    , removeEmptyLines = require('gulp-remove-empty-lines')
-    , revts = require('gulp-rev-timestamp')
-    , beautify = require('gulp-beautify')
-    , index = require('gulp-index') // Для создания списка страниц https://www.npmjs.com/package/gulp-index
-;
+var gulp             = require('gulp'),
+    sass             = require('gulp-sass'),
+    browserSync      = require('browser-sync').create(),
+    reload           = browserSync.reload,
+    concat           = require('gulp-concat'),
+    uglify           = require('gulp-uglifyjs'),
+    cssnano          = require('gulp-cssnano'),
+    concatCss        = require('gulp-concat-css'),
+    rename           = require('gulp-rename'),
+    del              = require('del'),
+    imagemin         = require('gulp-imagemin'),
+    pngquant         = require('imagemin-pngquant'),
+    cache            = require('gulp-cache'),
+    autoprefixer     = require('gulp-autoprefixer'),
+    sourcemaps       = require('gulp-sourcemaps'),
+    fileinclude      = require('gulp-file-include'),
+    markdown         = require('markdown'),
+    htmlbeautify     = require('gulp-html-beautify'),
+    fs               = require('fs'),
+    modernizr        = require('modernizr'),
+    config           = require('./modernizr-config'),
+    replace          = require('gulp-string-replace'),
+    strip            = require('gulp-strip-comments'),
+    stripCssComments = require('gulp-strip-css-comments'),
+    removeEmptyLines = require('gulp-remove-empty-lines'),
+    revts            = require('gulp-rev-timestamp'),
+    beautify         = require('gulp-beautify'),
+    index            = require('gulp-index'); // Для создания списка страниц https://www.npmjs.com/package/gulp-index
 
 /**
  * @description Относительный путь
@@ -158,7 +157,7 @@ gulp.task('copyLibsScriptsToJs', ['copyJqueryToJs'], function () {
     , 'src/libs/jquery-validation/dist/jquery.validate.min.js' // валидация форм
     , 'src/libs/select2/dist/js/select2.full.min.js' // кастомный селект
     , 'src/libs/select2/dist/js/i18n/ru.js' // локализация для кастомного селекта
-    , 'node_modules/object-fit-images/dist/ofi.min.js' // object-fit fix for a non-support browsers
+    , 'node_modules/object-fit-images/dist/ofi.min.js' // object-fit fix for non-support browsers
   ])
       .pipe(concat('libs.js'))
       .pipe(gulp.dest('src/js'))

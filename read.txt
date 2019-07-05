@@ -1,14 +1,21 @@
-Before star a project
+Star a project
 
 Run in a console
+================
 start.bat
 
 OR
 
 Run in a console
-============
-//npm i gulp
-//npm i
-//npm i bower
-//bower i
-============
+================
+npm i gulp
+npm i (this command install node_modules)
+npm i bower
+bower i
+
+Fast delete node_modules folder
+========================
+rimraf node_modules/
+
+@source
+https://www.youtube.com/watch?v=kesyrCZE1bA&feature=youtu.be

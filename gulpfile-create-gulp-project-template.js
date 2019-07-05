@@ -1,70 +1,45 @@
 'use strict';
 
 var gulp = require('gulp'),
-    imagemin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant'),
-    del = require('del'),
-    cache = require('gulp-cache')
-;
+    del = require('del');
 
-/************************************************************
- * Create Distribution folder and move files to it
- ************************************************************/
+var path = {
+  'tpl': 'gulp-project-template'
+};
 
 gulp.task('buildDistTpl', ['cleanDistTpl'], function () {
 
-  gulp.src(['src/img/**/*'])
-      .pipe(gulp.dest('gulp-project-template/src/img'));
+  gulp.src(['src/img/**/*']).pipe(gulp.dest(path.tpl + '/src/img'));
 
-  gulp.src(['!src/scss/test-mixins.scss', '!src/sass/**/normalize.*', 'src/sass/**/*'])
-      .pipe(gulp.dest('gulp-project-template/src/sass'));
+  gulp.src(['src/sass/**/*']).pipe(gulp.dest(path.tpl + '/src/sass'));
 
-  gulp.src('src/ajax')
-      .pipe(gulp.dest('gulp-project-template/src'));
+  gulp.src(['src/js/common.js']).pipe(gulp.dest(path.tpl + '/src/js'));
 
-  gulp.src('src/assets')
-      .pipe(gulp.dest('gulp-project-template/src'));
-
-  gulp.src('src/fonts')
-      .pipe(gulp.dest('gulp-project-template/src'));
-
-  gulp.src('src/video')
-      .pipe(gulp.dest('gulp-project-template/src'));
-
-  gulp.src(['src/js/common.js'])
-      .pipe(gulp.dest('gulp-project-template/src/js'));
-
-  gulp.src(['src/js/temp/**/*'])
-      .pipe(gulp.dest('gulp-project-template/src/js/temp'));
-
-  gulp.src(['src/includes/**/*'])
-      .pipe(gulp.dest('gulp-project-template/src/includes'));
+  gulp.src(['src/includes/**/*']).pipe(gulp.dest(path.tpl + '/src/includes'));
 
   gulp.src([
-    '!src/__test-mixins.html',
+    'src/fonts',
     'src/__*.html',
     'src/_tpl_*.html',
     'src/*.png',
     'src/*.jpg',
     'src/*.ico',
     'src/*.htaccess',
-    'src/manifest.webmanifest',
-    'src/*.json'
-  ]).pipe(gulp.dest('gulp-project-template/src'));
+    'src/*.json',
+    'src/manifest.webmanifest'
+  ]).pipe(gulp.dest(path.tpl + '/src'));
 
   gulp.src([
     './.bowerrc',
     './.gitignore',
-    '!./gulpfile-create-gulp-project-template.js',
     './*.json',
-    '!./modernizr-config--full.json',
-    './*.js',
+    './*.js', '!./gulpfile-create-gulp-project-template.js',
     './*.txt',
     './*.bat'
-  ]).pipe(gulp.dest('gulp-project-template'));
+  ]).pipe(gulp.dest(path.tpl));
 
 });
 
 gulp.task('cleanDistTpl', function () {
-  return del.sync(['gulp-project-template/']);
+  return del.sync([path.tpl + '/']);
 });

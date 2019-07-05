@@ -1,23 +1,20 @@
 /**
- * !Resize only width
+ * !Detects overlay scrollbars (when scrollbars on overflowed blocks are visible).
+ * This is found most commonly on mobile and OS X.
  * */
-var resizeByWidth = true;
-
-var prevWidth = -1;
-$(window).resize(function () {
-  var currentWidth = $('body').outerWidth();
-  resizeByWidth = prevWidth !== currentWidth;
-  if (resizeByWidth) {
-    $(window).trigger('resizeByWidth');
-    prevWidth = currentWidth;
-  }
-});
+var HIDDEN_SCROLL = Modernizr.hiddenscroll;
+var NO_HIDDEN_SCROLL = !HIDDEN_SCROLL;
 
 /**
- * !Detected touchscreen devices
+ * !Add touchscreen classes
  * */
-var TOUCH = Modernizr.touchevents;
-var DESKTOP = !TOUCH;
+function addTouchClasses() {
+  if (!("ontouchstart" in document.documentElement)) {
+    document.documentElement.className += " no-touch";
+  } else {
+    document.documentElement.className += " touch";
+  }
+}
 
 /**
  * !Add placeholder for old browsers
@@ -27,17 +24,7 @@ function placeholderInit() {
 }
 
 /**
- * !Show print page by click on the button
- * */
-function printShow() {
-  $('.view-print').on('click', function (e) {
-    e.preventDefault();
-    window.print();
-  })
-}
-
-/**
- * !Toggle class on a form elements on focus
+ * !Toggle class on a form's element on focus
  * */
 function inputFocusClass() {
   var $inputs = $('.field-js');
@@ -72,7 +59,7 @@ function inputFocusClass() {
 }
 
 /**
- * !Toggle class on a form elements if this one has a value
+ * !Toggle class on a form's element if this one has a value
  * */
 function inputHasValueClass() {
   var $inputs = $('.field-js');
@@ -127,75 +114,6 @@ function customSelect(select) {
       // , placeholder: placeholder
     });
   })
-}
-
-/**
- * !Initial sliders on the project
- * */
-function slidersInit() {
-  //images carousel
-  var $imagesCarousel = $('.images-slider-js');
-
-  if ($imagesCarousel.length) {
-    var slideCounterTpl = '' +
-        '<div class="slider-counter">' +
-        '<span class="slide-curr">0</span>/<span class="slide-total">0</span>' +
-        '</div>';
-
-    var titleListTpl = $('<div class="flashes"></div>');
-
-    $imagesCarousel.each(function () {
-      var $curSlider = $(this);
-      var $imgList = $curSlider.find('.images-slider__list');
-      var $imgListItem = $imgList.find('.images-slider__item');
-      var dur = 200;
-
-      // create titles
-      $imgList.after(titleListTpl.clone());
-      var $titleList = $curSlider.find('.flashes');
-      $.each($imgListItem, function () {
-        var $this = $(this);
-        $titleList.append($('<div class="flashes__item">' + $this.find('.caption').html() + '</div>'));
-      });
-
-      // initialized slider of titles
-      $titleList.slick({
-        fade: true,
-        speed: dur,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        asNavFor: $imgList,
-        dots: false,
-        arrows: false,
-
-        swipe: false,
-        touchMove: false,
-        draggable: false
-      });
-
-      // initialized slider of images
-      $imgList.on('init', function (event, slick) {
-        $(slick.$slider).append($(slideCounterTpl).clone());
-
-        $('.slide-total', $(slick.$slider)).text(slick.$slides.length);
-        $('.slide-curr', $(slick.$slider)).text(slick.currentSlide + 1);
-      }).slick({
-        fade: false,
-        speed: dur,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        asNavFor: $titleList,
-        lazyLoad: 'ondemand',
-        infinite: true,
-        dots: true,
-        arrows: true
-      }).on('beforeChange', function (event, slick, currentSlide, nextSlider) {
-        $('.slide-curr', $(slick.$slider)).text(nextSlider + 1);
-      });
-
-    });
-  }
 }
 
 /**
@@ -256,12 +174,11 @@ $(window).on('debouncedresize', function () {
 });
 
 $(document).ready(function () {
+  addTouchClasses();
   placeholderInit();
-  printShow();
   inputFocusClass();
   inputHasValueClass();
   customSelect($('select.cselect'));
-  slidersInit();
   objectFitImages(); // object-fit-images initial
 
   formValidation();

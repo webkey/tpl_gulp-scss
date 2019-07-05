@@ -16,7 +16,7 @@ gulp.task('buildDistTpl', ['cleanDistTpl'], function () {
   gulp.src(['src/img/**/*'])
       .pipe(gulp.dest('gulp-project-template/src/img'));
 
-  gulp.src(['!src/sass/test-mixins.sass', '!src/sass/**/normalize.*', 'src/sass/**/*'])
+  gulp.src(['!src/scss/test-mixins.scss', '!src/sass/**/normalize.*', 'src/sass/**/*'])
       .pipe(gulp.dest('gulp-project-template/src/sass'));
 
   gulp.src('src/ajax')

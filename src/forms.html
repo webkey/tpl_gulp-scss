@@ -791,6 +791,35 @@ include("_tpl_forms_textarea.html", {
       </form>
       <br><br>
       <hr>
+      <h2>Обратная связь</h2>
+      <form action="#" method="post" class="form-validate-js">
+        <div class="form-group">
+          <div class="form-group__item">
+            <label for="uf-name">Name: <mark>*</mark></label>
+            <input class="form-def field-js" id="uf-name" name="uf-name" type="text" placeholder="Your name" required />
+            <span class="error-feedback">Please enter your name, please</span>
+            <span class="success-feedback">Success feedback</span>
+          </div>
+          <div class="form-group__item">
+            <label for="uf-email">Email: <mark>*</mark></label>
+            <input class="form-def field-js" id="uf-email" name="uf-email" type="email" placeholder="Your email" required />
+            <span class="error-feedback">Please enter a valid email address</span>
+            <span class="success-feedback">Success feedback</span>
+          </div>
+        </div>
+        <div class="form-unit captcha">
+          <label for="form-captcha">Security Check: <mark>*</mark></label>
+          <div class="captcha-ctrl">
+            <img class="captcha-ctrl__img" src="img/captcha.jpg" alt="captcha" />
+            <div class="captcha-ctrl__refresh"><a href="#"><span>Try another text</span></a></div>
+          </div>
+          <input class="form-def field-js" id="form-captcha" name="form-captcha" type="text" placeholder="Enter code" required />
+          <span class="error-feedback">Enter text in this image</span>
+          <span class="success-feedback">The verification was successful!</span>
+        </div>
+        <button class="btn-def">Send</button>
+      </form>
+      <br><br>
     </div>
   </main>
   <footer class="footer">

@@ -6,43 +6,30 @@
 .captcha {
   position: relative;
 
-  // Важно! Для позицирования отметки подтверждения полей формы
-  z-index: 1;
-
-  // Важно! Отметка подтверждения полей формы имеет z-index: -1
-  @include clear-spacing;
-
   input {
     text-align: center;
+    width: 18rem;
   }
+}
 
-  img {
-    $space-right: 20px;
+.captcha-ctrl {
+  margin-bottom: $bottom-space;
 
+  .captcha-ctrl__img {
     display: inline-block;
     vertical-align: middle;
     width: 180px;
     max-width: 50%;
-    margin-right: $space-right;
-
-    @include font-size(12px, round-float(16 / 12, 2));
-
+    @include font-size(1.2rem, 1.6rem);
+    font-size: 1.2rem;
+    line-height: 1.6rem;
     letter-spacing: $letter-spacing;
-
-    & + input {
-      display: inline-block;
-      vertical-align: middle;
-      width: 180px;
-      max-width: calc(50% - #{$space-right});
-      margin: 0;
-    }
   }
 
-  .captcha-refresh {
-    @include font-size(14px, round-float(18 / 14, 2));
-
+  .captcha-ctrl__refresh {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
     letter-spacing: $letter-spacing;
-    margin-bottom: 0.5em;
 
     a {
       color: $text-color;

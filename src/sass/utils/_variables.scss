@@ -191,8 +191,9 @@ $line-height-h6: $line-height !default;
 
 // Spaces
 $bottom-space: $line-height !default;
-$bottom-space--large: $line-height * 3 !default;
-$bottom-space--small: round-float($line-height*0.75, 1) !default;
+$bottom-space--mob: $line-height--mob !default;
+$bottom-section: round-float($line-height * 1.5, 1) !default;
+$bottom-section--mob: round-float($line-height--mob * 1.5, 1) !default;
 
 
 // Colors

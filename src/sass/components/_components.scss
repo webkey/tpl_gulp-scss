@@ -3,6 +3,22 @@
 @import "../../libs/include-media/dist/include-media";
 
 /* helper classes */
+.bottom-space {
+  margin-bottom: $bottom-space;
+
+  @include media('<mob') {
+    margin-bottom: $bottom-space--mob;
+  }
+}
+
+.section-bottom-space {
+  margin-bottom: $bottom-section;
+
+  @include media('<mob') {
+    margin-bottom: $bottom-section--mob;
+  }
+}
+
 .mark {
   color: $mark-color;
 }
@@ -61,6 +77,46 @@
     display: none;
   }
 }
+
+/* ==================================== */
+/* ======= NON CONTENT ELEMENTS ======= */
+/* ==================================== */
+/* breadcrumbs */
+.breadcrumbs {
+  color: $text-color-light;
+  margin-bottom: $bottom-space;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.breadcrumbs__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  cursor: default;
+}
+
+.breadcrumbs__item {
+  display: inline;
+  padding-right: 0.6rem;
+  margin: 0;
+
+  &::after {
+    display: inline;
+    content: "•";
+    padding-left: 0.7em;
+  }
+
+  &:last-child {
+    &::after {
+      content: none;
+    }
+  }
+}
+
+/* breadcrumbs end */
 
 /* ==================================== */
 /* ============== HEADER ============== */

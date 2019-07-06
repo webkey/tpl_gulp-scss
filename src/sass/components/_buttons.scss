@@ -22,10 +22,12 @@
   text-align: center;
   cursor: pointer;
   border: $btn-border-width solid transparent;
+  border-radius: 5px;
   background-color: $btn-bg-color;
   box-shadow: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  transition: color $animation-speed, border-color $animation-speed, background-color $animation-speed;
 
   &, & > span {
     @include font-size($btn-font-size, $btn-line-height);
@@ -41,7 +43,7 @@
   }
 
   // Disabled
-  &:disabled, &.disabled, &[data-disabled] {
+  &:disabled, &.disabled {
     @include btn-disabled;
   }
 }
@@ -68,10 +70,12 @@
   text-align: center;
   cursor: pointer;
   border: $btn-border-width solid $btn-bg-color;
+  border-radius: 5px;
   background-color: white;
   box-shadow: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  transition: color $animation-speed, border-color $animation-speed, background-color $animation-speed;
 
   &, & > span {
     @include font-size($btn-font-size, $btn-line-height);
@@ -88,7 +92,7 @@
   }
 
   // Disabled
-  &:disabled, &.disabled, &[data-disabled] {
+  &:disabled, &.disabled {
     @include btn-disabled;
   }
 }

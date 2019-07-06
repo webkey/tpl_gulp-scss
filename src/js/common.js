@@ -10,9 +10,9 @@ var NO_HIDDEN_SCROLL = !HIDDEN_SCROLL;
  * */
 function addTouchClasses() {
   if (!("ontouchstart" in document.documentElement)) {
-    document.documentElement.className += " no-touch";
+    document.documentElement.className += " no-touchevents";
   } else {
-    document.documentElement.className += " touch";
+    document.documentElement.className += " touchevents";
   }
 }
 

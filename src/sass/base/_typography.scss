@@ -296,21 +296,6 @@ $columns-gap: 2em;
 
 /* columns end */
 
-/* user spacer */
-.user-spacer {
-  display: block;
-  height: $bottom-space * 3;
-
-  @include font-size(0, 0);
-  @include clear;
-
-  @include media("<desk-s") {
-    height: $bottom-space * 2;
-  }
-}
-
-/* user spacer end */
-
 /* typography elements */
 .#{$typography-style-class} {
   @each $tags in h2, h3, h4, h5, h6, ".h2", ".h3", ".h4", ".h5", ".h6" {
@@ -351,23 +336,23 @@ $columns-gap: 2em;
     display: block;
     margin: 0 0 $bottom-space;
     padding: 0;
-    background-color: white;
 
     q {
       display: block;
       margin: 0;
       padding: 0 0 10px;
-
       @include font-normal;
-      @include font-size(round-float($font-size * 1.25, 1), $line-height);
-
+      font-size: round-float($font-size * 1.25, 1);
+      line-height: round-float($line-height * 1.2, 1);
       color: $text-color;
       text-align: center;
 
       &::before, &::after {
-        @include pseudo($pos: relative);
-        @include font-size(4rem, 1);
-
+        content: "";
+        display: block;
+        position: relative;
+        font-size: 3em;
+        line-height: 1;
         text-align: left;
       }
 
@@ -386,13 +371,10 @@ $columns-gap: 2em;
     }
 
     cite {
-      text-align: right;
+      text-align: center;
       display: block;
-      margin-left: auto;
-
-      @include font-size($font-size, $line-height);
-
-      color: $text-color-light;
+      font-size: inherit;
+      line-height: inherit;
     }
   }
 
@@ -480,10 +462,11 @@ $columns-gap: 2em;
       margin-bottom: 2rem;
     }
 
-    &[align="left"], .imgl {
+    &[align="left"], &.imgl {
       float: left;
       text-align: left;
       max-width: 45%;
+      margin-top: 0;
       margin-right: 3rem;
 
       @include media("<tab") {
@@ -498,10 +481,11 @@ $columns-gap: 2em;
       }
     }
 
-    &[align="right"], .imgr {
+    &[align="right"], &.imgr {
       float: right;
       text-align: right;
       max-width: 45%;
+      margin-top: 0;
       margin-left: 3rem;
 
       @include media("<tab") {

@@ -1,5 +1,5 @@
-@@include('_tpl_layout_head.html', { "title": "Forms","pageClass": "" })
-@@include('_tpl_layout_header.html', { "currentItem": "" })
+@@include("_tpl_layout_head.html", { "title": "Forms","pageClass": "" })
+@@include("_tpl_layout_header.html", { "currentItem": "" })
 
 
 <main class="main" role="main">
@@ -87,7 +87,7 @@ include("_tpl_forms_textarea.html", {
       @@include("_tpl_forms_valid.html")
 
       <!--=== === ===--><br>
-      @@include("_tpl_btn.html", {"type": "button!", "value": "VALIDATE"})
+      <button class="btn-def">VALIDATE</button>
     </form>
     <br><br>
 
@@ -128,7 +128,7 @@ include("_tpl_forms_textarea.html", {
       @@include("_tpl_forms_valid.html")
 
       <!--=== === ===--><br>
-      @@include("_tpl_btn.html", {"type": "button!", "value": "VALIDATE"})
+      <button class="btn-def">VALIDATE</button>
     </form>
     <br><br>
     <hr>
@@ -244,7 +244,7 @@ include("_tpl_forms_textarea.html", {
       @@include("_tpl_forms_valid.html")
 
       <!--=== === ===--><br>
-      @@include("_tpl_btn.html", {"type": "button!", "value": "VALIDATE"})
+      <button class="btn-def">VALIDATE</button>
     </form>
     <br><br>
 
@@ -301,7 +301,7 @@ include("_tpl_forms_textarea.html", {
       @@include("_tpl_forms_valid.html")
 
       <!--=== === ===--><br>
-      @@include("_tpl_btn.html", {"type": "button!", "value": "VALIDATE"})
+      <button class="btn-def">VALIDATE</button>
     </form>
     <br><br>
     <hr>
@@ -372,7 +372,7 @@ include("_tpl_forms_textarea.html", {
       @@include("_tpl_forms_valid.html")
 
       <!--=== === ===--><br>
-      @@include("_tpl_btn.html", {"type": "button!", "value": "VALIDATE"})
+      <button class="btn-def">VALIDATE</button>
     </form>
     <br><br>
     <hr>
@@ -410,7 +410,7 @@ include("_tpl_forms_textarea.html", {
       </div>
 
       <!--=== === ===--><br>
-      @@include("_tpl_btn.html", {"type": "button!", "value": "VALIDATE"})
+      <button class="btn-def">VALIDATE</button>
     </form>
     <br><br>
     <hr>
@@ -471,14 +471,16 @@ include("_tpl_forms_textarea.html", {
       </div>
 
       <!--=== === ===--><br>
-      @@include("_tpl_btn.html", {"type": "button!", "value": "VALIDATE"})
+      <button class="btn-def">VALIDATE</button>
     </form>
     <br><br>
 
     <hr>
+    @@include("_tpl_forms_user-form.html", { "title": "Обратная связь" })
+    <br><br>
   </div>
 </main>
 
 
-@@include('_tpl_layout_footer.html')
-@@include('_tpl_layout_foot.html')
+@@include("_tpl_layout_footer.html")
+@@include("_tpl_layout_foot.html")

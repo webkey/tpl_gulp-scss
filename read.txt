@@ -15,6 +15,10 @@ bower i
 
 Fast delete node_modules folder
 ========================
+install rimraf:
+npm install rimraf -g
+
+remove node_modules
 rimraf node_modules/
 
 @source

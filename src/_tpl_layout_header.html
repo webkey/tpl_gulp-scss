@@ -1,3 +1,4 @@
+<!--HEADER-->
 <header class="header">
   <div class="layout-page layout-page-spaces">
     <div class="header-container">
@@ -5,9 +6,10 @@
       <div class="logo">
         @@if(context.currentItem === "Главная"){<span>Project Name</span>}
         @@if(context.currentItem !== "Главная"){<a href="index.html" title="Перейти на главную">Project Name</a>}
+        <!--logo for a print version-->
         <img style="display: none;" src="img/logo.svg" alt="Print version logotype">
       </div>
-      <!--/logo-->
+      <!--logo end-->
 
       <!--navigation-->
       <div class="nav-wrap">
@@ -15,7 +17,8 @@
           @@include("_tpl_nav-constructor.html", { "currentItem": "@@currentItem", "bsKey": "nav" })
         </nav>
       </div>
-      <!--/navigation-->
+      <!--navigation end-->
     </div>
   </div>
 </header>
+<!--HEADER end-->

@@ -486,10 +486,6 @@ body {
 /* ==================================== */
 /* ============ TYPOGRAPHY ============ */
 /* ==================================== */
-body *::-moz-selection {
-  background-color: #ee6e73;
-  color: #50ebe5;
-}
 body *::selection {
   background-color: #ee6e73;
   color: #50ebe5;
@@ -1138,10 +1134,10 @@ table td, table th {
 /* typography elements end */
 /* article content */
 .article-content > p, .article-content > ul, .article-content > ol,
+.article-content > h1, .article-content > .h1,
 .article-content > h2, .article-content > h3, .article-content > h4, .article-content > h5, .article-content > h6,
 .article-content > .h2, .article-content > .h3, .article-content > .h4, .article-content > .h5, .article-content > .h6,
 .article-content > hr, .article-content > mark, .article-content > blockquote, .article-content > figure,
-.article-content > h1, .article-content > .h1, .article-content .entry-text,
 .article-content > .layout-text {
   max-width: 80rem;
   margin-right: auto;

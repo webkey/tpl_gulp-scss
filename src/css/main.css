@@ -495,7 +495,8 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin: 0 0 2.4rem;
   padding: 0;
-  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: normal;
   color: #ee6e73;
 }
 
@@ -517,7 +518,6 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover,
 }
 
 h1, .h1 {
-  font-weight: normal;
   font-size: 4.2rem;
   line-height: 5.2rem;
 }
@@ -577,8 +577,15 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+@media (max-width: 639px) {
+  h4, .h4 {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
 }
 
 h5, .h5 {
@@ -587,8 +594,8 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  font-size: 1.1rem;
+  line-height: 2.3rem;
   text-transform: uppercase;
 }
 
@@ -1247,10 +1254,10 @@ table td, table th {
 label {
   display: inline-block;
   vertical-align: top;
+  margin-bottom: 0.5em;
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: #ccc;
-  margin-bottom: 0.5em;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -2115,50 +2122,6 @@ select.has-arrow + .select-arrow {
   color: #dc3545;
 }
 
-.error-feedback, .success-feedback {
-  float: left;
-  position: relative;
-  width: 100%;
-  margin-top: -3rem;
-  padding: 0.3rem 0;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  letter-spacing: normal;
-  display: none;
-}
-
-@media (max-width: 639px) {
-  .error-feedback, .success-feedback {
-    margin-top: -3rem;
-  }
-}
-
-.error-feedback {
-  color: #dc3545;
-}
-
-form .error + .error-feedback,
-form .error + .select2 + .error-feedback,
-form .error + .select-arrow + .error-feedback,
-form .success + .success-feedback + .error-feedback,
-form .success + .select2 + .success-feedback + .error-feedback,
-form .success + .select-arrow + .success-feedback + .error-feedback {
-  display: block;
-}
-
-.success-feedback {
-  color: #28a745;
-}
-
-form .success + .success-feedback,
-form .success + .select2 + .success-feedback,
-form .success + .select-arrow + .success-feedback,
-form .success + .error-feedback + .success-feedback,
-form .success + .select2 + .error-feedback + .success-feedback,
-form .success + .select-arrow + .error-feedback + .success-feedback {
-  display: block;
-}
-
 .captcha {
   position: relative;
 }
@@ -2205,6 +2168,50 @@ form .success + .select-arrow + .error-feedback + .success-feedback {
 
 .captcha-ctrl .captcha-ctrl__refresh a:hover span {
   border-color: #007bff;
+}
+
+.error-feedback, .success-feedback {
+  float: left;
+  position: relative;
+  width: 100%;
+  margin-top: -3rem;
+  padding: 0.3rem 0;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  letter-spacing: normal;
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .error-feedback, .success-feedback {
+    margin-top: -3rem;
+  }
+}
+
+.error-feedback {
+  color: #dc3545;
+}
+
+form .error + .error-feedback,
+form .error + .select2 + .error-feedback,
+form .error + .select-arrow + .error-feedback,
+form .success + .success-feedback + .error-feedback,
+form .success + .select2 + .success-feedback + .error-feedback,
+form .success + .select-arrow + .success-feedback + .error-feedback {
+  display: block;
+}
+
+.success-feedback {
+  color: #28a745;
+}
+
+form .success + .success-feedback,
+form .success + .select2 + .success-feedback,
+form .success + .select-arrow + .success-feedback,
+form .success + .error-feedback + .success-feedback,
+form .success + .select2 + .error-feedback + .success-feedback,
+form .success + .select-arrow + .error-feedback + .success-feedback {
+  display: block;
 }
 
 /* form elements end */

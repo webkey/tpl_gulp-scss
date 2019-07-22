@@ -3,6 +3,8 @@
 @import "../../libs/include-media/dist/include-media";
 
 // Select
+// ======
+
 select {
   .#{$article-content} &, .select & {
     display: block;

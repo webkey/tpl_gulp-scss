@@ -2,6 +2,9 @@
 @import "../utils/mixins";
 @import "../../libs/include-media/dist/include-media";
 
+// Validation feedback
+// ===================
+
 .error-feedback, .success-feedback {
   float: left;
   position: relative;

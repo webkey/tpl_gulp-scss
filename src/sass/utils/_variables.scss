@@ -164,8 +164,8 @@ $line-height-h3--mob: round-float($font-size-h3--mob * $line-height-h3-kef, 1) !
 }
 
 // Heading h4
-$font-size-h4: $font-size !default;
-$line-height-h4: $line-height !default;
+$font-size-h4: 2.0rem !default;
+$line-height-h4: 2.8rem !default;
 
 // ----------------------------------------------------
 $font-size-h4--mob: $font-size--mob !default;
@@ -185,9 +185,19 @@ $line-height-h4--mob: $line-height--mob !default;
 $font-size-h5: $font-size !default;
 $line-height-h5: $line-height !default;
 
+@mixin font-h5() {
+  font-size: $font-size-h5;
+  line-height: $line-height;
+}
+
 // Heading h6
-$font-size-h6: $font-size !default;
-$line-height-h6: $line-height !default;
+$font-size-h6: round-float($font-size * 0.70, 1) !default;
+$line-height-h6: round-float($line-height * 0.95, 1) !default;
+
+@mixin font-h6() {
+  font-size: $font-size-h6;
+  line-height: $line-height-h6;
+}
 
 // Spaces
 $bottom-space: $line-height !default;

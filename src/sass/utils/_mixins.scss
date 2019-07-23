@@ -1206,7 +1206,7 @@
 // ПРИМЕСИ ДЛЯ ПРИНТ ВЕРСИИ
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
 @mixin print-reset {
-  display: block !important;
+  //display: block !important;
   float: none !important;
   position: relative !important;
   overflow: visible !important;
@@ -1228,6 +1228,8 @@
   box-shadow: none !important;
   opacity: 1 !important;
   visibility: visible !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
   z-index: auto !important;
 }
 

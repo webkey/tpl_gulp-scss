@@ -3,6 +3,97 @@
 @import "../../libs/include-media/dist/include-media";
 
 @media print {
+
+  // Full reset
+  // ==========
+
+  // Block elements
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  p, hr, div,
+  blockquote, q, cite, figure, figcaption,
+  header, footer, main, section, article, aside,
+  applet, object, iframe,
+  pre,
+  abbr, acronym, address, big, code,
+  del, dfn, ins, kbd, s, samp,
+  tt,
+  dl, dt, dd,
+  fieldset, form, legend, caption,
+  canvas, details, embed,
+  menu, nav, output, ruby, summary,
+  audio, video,
+  .full-reset {
+    display: block !important;
+    @include print-reset;
+  }
+
+  // Other elements
+  ul, ol, li,
+  a, span, i, em, strong, b, u, mark, time, label,
+  small, strike, sub, sup, var,
+  table, table td, table th,
+  img, svg {
+    @include print-reset;
+  }
+
+  // Inline elements
+  a, span, i, em, strong, b, u, mark, time, label,
+  small, strike, sub, sup, var {
+    display: inline !important;
+  }
+
+  // Inline-block elements
+  img, svg {
+    display: inline-block !important;
+  }
+
+  // List elements
+  ul, ol {
+    display: block !important;
+    padding-left: 40px !important;
+    list-style: initial !important;
+    li {
+      display: list-item !important;
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+
+  // Table elements
+  table {
+    display: table !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  // Remove pseudo elements
+  div, ul, li {
+    &::before, &::after {
+      content: none !important;
+    }
+  }
+
+
+  // Reset body
+  // ==========
+
+  body {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 10pt !important;
+    line-height: 1.5 !important;
+    font-size: initial !important;
+    line-height: initial !important;
+    min-width: 1024px !important;
+  }
+
+
+  // Special reset
+  // =============
+
   *,
   *::before,
   *::after {
@@ -13,40 +104,31 @@
   }
 
   a, a:visited {
-    text-decoration: underline;
+    text-decoration: underline !important;
   }
 
   a[href^=http]::after {
-    content: " <" attr(href) "> ";
+    content: " <" attr(href) "> " !important;
   }
 
   a[href]::after {
-    content: " (" attr(href) ")";
+    content: " (" attr(href) ")" !important;
   }
 
   abbr[title]::after {
-    content: " (" attr(title) ")";
+    content: " (" attr(title) ")" !important;
   }
 
   a[href^="#"]::after, a[href^="javascript:"]::after {
-    content: "";
+    content: "" !important;
   }
 
   pre, blockquote {
-    border: 1px solid #999;
     page-break-inside: avoid;
-  }
-
-  thead {
-    display: table-header-group;
   }
 
   tr, img {
     page-break-inside: avoid;
-  }
-
-  img {
-    max-width: 100% !important;
   }
 
   p, h2, h3 {
@@ -58,16 +140,9 @@
     page-break-after: avoid;
   }
 
-  hr {
-    border-color: black;
-  }
 
-  body {
-    font-family: Arial, Helvetica, sans-serif !important;
-    font-size: 10pt !important;
-    line-height: 1.5 !important;
-    min-width: 1024px !important;
-  }
+  // Typography reset
+  // ================
 
   h1, h2, h3, h4, h5, h6,
   b, strong, th, i, em,
@@ -78,41 +153,13 @@
     font-style: normal !important;
   }
 
-  h1 {
-    font-size: 20pt !important;
-    line-height: 1.3 !important;
-  }
-
-  h2 {
-    font-size: 18pt !important;
-    line-height: 1.4 !important;
-  }
-
-  h3, .main-slider-title__item {
-    font-size: 16pt !important;
-    line-height: 1.5 !important;
-  }
-
-  h4, blockquote q {
-    font-size: 14pt !important;
-    line-height: 1.5 !important;
-  }
-
-  h5, blockquote cite {
-    font-size: 12pt !important;
-    line-height: 1.6 !important;
-  }
-
-  h6 {
-    font-size: 8pt !important;
-    line-height: 1.8 !important;
-  }
-
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6,
   b, strong, th {
     font-weight: bold !important;
   }
 
-  i, em {
+  i, em, figcaption, cite {
     font-style: italic !important;
   }
 
@@ -122,9 +169,14 @@
     font-style: italic !important;
   }
 
+  table {
+    width: 100% !important;
+  }
+
   table td, table th, table {
     border: 1px solid black !important;
     font-size: 9pt !important;
+    line-height: 1.6 !important;
     color: black !important;
     padding: 3pt !important;
 
@@ -133,39 +185,131 @@
     }
   }
 
+  blockquote {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: calc(100% - 2cm) !important;
+
+    q {
+      text-align: center !important;
+
+      &::before, &::after {
+        position: static !important;
+        display: inline-block !important;
+        vertical-align: baseline !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 1em !important;
+      }
+    }
+
+    cite {
+      text-align: right !important;
+    }
+  }
+
+  hr {
+    border-color: black;
+  }
+
+  svg {
+    height: 1cm !important;
+    width: 1cm !important;
+  }
+
+
+  // Images max size
+  // ===============
+  img {
+    max-width: 8cm !important;
+    @include prints-space-bottom-sm;
+  }
+
+
+  // Reset titles
+  // ============
+
+  h1, .h1,
+  .title-text {
+    font-size: 26pt !important;
+    line-height: 1.3 !important;
+  }
+
+  h2, .h2,
+  .sub-title-text {
+    font-size: 22pt !important;
+    line-height: 1.4 !important;
+  }
+
+  h3, .h3,
+  .entry-text {
+    font-size: 18pt !important;
+    line-height: 1.5 !important;
+  }
+
+  h4, .h4,
+  blockquote q,
+  .caption-text {
+    font-size: 14pt !important;
+    line-height: 1.5 !important;
+  }
+
+  h5, .h5,
+  blockquote cite,
+  .mark-text {
+    font-size: 12pt !important;
+    line-height: 1.6 !important;
+  }
+
+  h6, .h6,
+  .small-title {
+    font-size: 8pt !important;
+    line-height: 1.8 !important;
+  }
+
+
+  // Hide elements
+  // =============
+
   .sidebar, .aside, .footer, .spacer,
   .print-hidden, .view-print,
   .nav, .nav-list,
   .breadcrumbs, .breadcrumbs__list,
   [class*="btn-"],
-  form,
-  .class {
+  form {
     display: none !important;
   }
 
-  .main, .content, .header, .header__holder,
-  .layout, .layout-text, .layout-flood,
-  .blockquote, .blockquote *, blockquote,
-  .imgl, .imgr, .imgc,
-  table, blockquote, q, cite,
-  .class {
-    @include print-reset;
-  }
+
+  // Spaces
+  // ======
 
   h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6,
   p, ul, ol, blockquote, q,
   .table-auto, table,
-  .imgl, .imgr, .imgc,
-  .datetime,
-  .class {
+  figure,
+  .imgl, .imgr, .imgc {
     @include prints-space-bottom-sm;
   }
 
-  .header, .blockquote, hr, blockquote,
-  .class {
+  .header,
+  .blockquote, blockquote,
+  hr {
     @include prints-space-bottom-md;
   }
 
+
+  // Individual styles
+  // =================
+
+  // Header
+  .header {
+    padding: 0.3cm 0 !important;
+    border-bottom: 1px solid black !important;
+  }
+
+  // Logotype
   .logo {
     background: none !important;
 
@@ -176,22 +320,7 @@
     & > img {
       display: block !important;
       float: left !important;
+      margin: 0 !important;
     }
-  }
-
-  blockquote q::before,
-  blockquote q::after {
-    padding: 0 !important;
-    margin: 0 !important;
-    font-size: 18pt !important;
-    display: inline-block !important;
-  }
-
-  table {
-    width: 100% !important;
-  }
-
-  .#{$article-content} img {
-    max-width: 8cm !important;
   }
 }

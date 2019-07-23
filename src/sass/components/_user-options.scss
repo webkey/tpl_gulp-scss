@@ -148,8 +148,8 @@ $uo-border-radius: 0 0 7px 7px;
 
     // text
     & > span {
-      @include display-inline-block-middle;
-
+      display: inline-block;
+      vertical-align: middle;
       font-size: 1.1rem;
       line-height: 1.3rem;
       letter-spacing: normal;

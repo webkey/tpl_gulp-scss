@@ -294,8 +294,9 @@ $columns-gap: 2em;
 /* columns end */
 
 /* typography elements */
-.#{$typography-style-class} {
-  @each $tags in h2, h3, h4, h5, h6, ".h2", ".h3", ".h4", ".h5", ".h6" {
+.typography {
+  $list: h2, h3, h4, h5, h6, ".h2", ".h3", ".h4", ".h5", ".h6";
+  @each $tags in $list {
     p + #{$tags},
     ul + #{$tags},
     ol + #{$tags},
@@ -502,7 +503,7 @@ $columns-gap: 2em;
 /* typography elements end */
 
 /* article content */
-.#{$article-content} {
+.article-content {
   & > p, & > ul, & > ol,
   & > h1, & > .h1,
   & > h2, & > h3, & > h4, & > h5, & > h6,

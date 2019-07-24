@@ -6,13 +6,13 @@
 // ======
 
 select {
-  .#{$article-content} &, .select & {
+  .article-content &, .select & {
     display: block;
     width: 100%;
   }
 }
 
-.#{$article-content}, .select, .#{$article-content} .select {
+.article-content, .select, .article-content .select {
   select {
     @include selectSelection;
 
@@ -31,11 +31,11 @@ select {
   }
 }
 
-.#{$article-content} select {
+.article-content select {
   padding-right: 0;
 }
 
-.#{$article-content} select, .select {
+.article-content select, .select {
   @include forms-space;
 
   &:last-child {
@@ -75,7 +75,7 @@ select {
 }
 
 // States
-.#{$article-content} select, .select {
+.article-content select, .select {
   &[disabled] {
     cursor: default;
     color: $form-text-color--disabled;

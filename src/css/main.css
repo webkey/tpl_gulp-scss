@@ -383,6 +383,9 @@ ul {
 /* browserupgrade end */
 /* no js warning */
 .no-js-warning {
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
   border: 2px solid #f00;
   color: #f00;
   background: #fff;
@@ -1201,86 +1204,51 @@ label mark {
 }
 
 .form-def {
-  display: block;
-  padding: 12px 18px 12px;
+  height: 5rem;
   width: 100%;
-  height: 50px;
-  background-color: white;
+  padding: 1.4rem 1.8rem 1.4rem 1.8rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
   box-shadow: none;
-  border: 1px solid #d9d9d9;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 24px;
+  border: 0.1rem solid #d9d9d9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.6rem;
+  line-height: 2rem;
   color: #262626;
   margin: 0 0 3rem;
+  transition: color 0.2s, border 0.2s;
 }
 
 @media (max-width: 639px) {
   .form-def {
-    margin: 0 0 3rem;
+    height: 4.2rem;
+    padding: 1.4rem 1.4rem 1.4rem 1.4rem;
+    border-radius: 0.5rem;
+    border-width: 0.1rem;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin: 0 0 2.5rem;
   }
 }
 
 textarea.form-def {
-  min-height: 74px;
-  height: 74px;
+  min-height: 6rem1.4rem1.4rem0rem;
+  height: 6rem1.4rem1.4rem0rem;
   resize: vertical;
+}
+
+@media (max-width: 639px) {
+  textarea.form-def {
+    min-height: 5rem1.4rem1.4rem0rem;
+    height: 5rem1.4rem1.4rem0rem;
+  }
 }
 
 .form-def:last-child {
   margin-bottom: 0;
 }
 
-.form-def::-webkit-input-placeholder {
-  color: #cccccc;
-  transition: 0.2s opacity;
-}
-
-.form-def:-moz-placeholder {
-  color: #cccccc;
-  transition: 0.2s opacity;
-}
-
-.form-def::-moz-placeholder {
-  opacity: 1;
-  color: #cccccc;
-  transition: 0.2s opacity;
-}
-
-.form-def:-ms-input-placeholder {
-  opacity: 1;
-  color: #cccccc;
-  transition: 0.2s opacity;
-}
-
-.form-def.placeholder {
-  color: #cccccc;
-  transition: 0.2s opacity;
-}
-
-.form-def:focus::-webkit-input-placeholder {
-  opacity: 0;
-}
-
-.form-def:focus:-moz-placeholder {
-  opacity: 0;
-}
-
-.form-def:focus::-moz-placeholder {
-  opacity: 0;
-}
-
-.form-def:focus:-ms-input-placeholder {
-  opacity: 0;
-}
-
-.form-def.placeholder:focus {
-  opacity: 0;
-}
-
 .form-def:focus {
-  cursor: text;
   border-color: #a6a6a6;
 }
 
@@ -1396,6 +1364,53 @@ label.error {
   color: #ced4da !important;
 }
 
+.form-def::-webkit-input-placeholder {
+  color: #cccccc;
+  transition: 0.2s opacity;
+}
+
+.form-def:-moz-placeholder {
+  color: #cccccc;
+  transition: 0.2s opacity;
+}
+
+.form-def::-moz-placeholder {
+  opacity: 1;
+  color: #cccccc;
+  transition: 0.2s opacity;
+}
+
+.form-def:-ms-input-placeholder {
+  opacity: 1;
+  color: #cccccc;
+  transition: 0.2s opacity;
+}
+
+.form-def.placeholder {
+  color: #cccccc;
+  transition: 0.2s opacity;
+}
+
+.form-def:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.form-def:focus:-moz-placeholder {
+  opacity: 0;
+}
+
+.form-def:focus::-moz-placeholder {
+  opacity: 0;
+}
+
+.form-def:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.form-def.placeholder:focus {
+  opacity: 0;
+}
+
 .form-unit {
   position: relative;
   margin-bottom: 3rem;
@@ -1412,14 +1427,14 @@ label.error {
 }
 
 .form-unit select.has-arrow + .select-arrow {
-  margin-top: -50px;
+  margin-top: -5rem;
   font-size: 0;
   line-height: 0;
 }
 
 @media (max-width: 639px) {
   .form-unit select.has-arrow + .select-arrow {
-    margin-top: -50px;
+    margin-top: -5rem;
   }
 }
 
@@ -1608,28 +1623,34 @@ label.error {
 }
 
 .article-content select, .select select, .article-content .select select {
-  height: 50px;
-  width: 100%;
-  padding: 12px 40px 12px 18px;
-  background: white;
-  border: 1px solid #d9d9d9;
-  border-radius: 0;
-  box-shadow: none;
-  text-indent: 0;
-  outline: none;
   display: block;
   position: relative;
   overflow: hidden;
   text-overflow: "";
-  cursor: pointer;
   white-space: nowrap;
+  height: 5rem;
+  width: 100%;
+  padding: 1.4rem 4rem 1.4rem 1.2rem;
+  background: #fff;
+  border: 0.1rem solid #d9d9d9;
+  border-radius: 0;
+  box-shadow: none;
+  text-indent: 0;
+  outline: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #262626;
 }
 
-.article-content select, .select select, .article-content .select select {
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 24px;
-  color: #262626;
+@media (max-width: 639px) {
+  .article-content select, .select select, .article-content .select select {
+    height: 4.2rem;
+    padding: 1.4rem 4rem 1.4rem 1.2rem;
+    border: 0.1rem solid #d9d9d9;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
 }
 
 .article-content select {
@@ -1638,12 +1659,6 @@ label.error {
 
 .article-content select, .select {
   margin: 0 0 3rem;
-}
-
-@media (max-width: 639px) {
-  .article-content select, .select {
-    margin: 0 0 3rem;
-  }
 }
 
 .article-content select:last-child, .select:last-child {
@@ -1800,16 +1815,16 @@ select.has-arrow + .select-arrow {
   -ms-flex-pack: center;
       justify-content: center;
   position: relative;
-  height: 50px;
-  width: 40px;
-  margin-top: calc(-3rem - 50px);
+  height: 5rem;
+  width: 4rem;
+  margin-top: calc(-3rem - 5rem);
   font-size: 0;
   line-height: 0;
 }
 
 @media (max-width: 639px) {
   select.has-arrow + .select-arrow {
-    margin-top: calc(-3rem - 50px);
+    margin-top: calc(-2.5rem - 5rem);
   }
 }
 
@@ -1817,22 +1832,16 @@ select.has-arrow + .select-arrow {
   margin: 0 0 3rem;
 }
 
-@media (max-width: 639px) {
-  .select2 {
-    margin: 0 0 3rem;
-  }
-}
-
 .select2:last-child {
   margin-bottom: 0;
 }
 
 .select2-container--default .select2-selection {
-  height: 50px;
+  height: 5rem;
   width: 100%;
-  padding: 12px 40px 12px 18px;
-  background: white;
-  border: 1px solid #d9d9d9;
+  padding: 1.4rem 4rem 1.4rem 1.2rem;
+  background: #fff;
+  border: 0.1rem solid #d9d9d9;
   border-radius: 0;
   box-shadow: none;
   text-indent: 0;
@@ -1840,9 +1849,9 @@ select.has-arrow + .select-arrow {
 }
 
 .select2-container--default .select2-selection .select2-selection__rendered {
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.6rem;
+  line-height: 2rem;
   color: #262626;
 }
 
@@ -1878,8 +1887,8 @@ select.has-arrow + .select-arrow {
   position: absolute;
   right: 0;
   top: 0;
-  width: 40px;
-  height: 50px;
+  width: 4rem;
+  height: 5rem;
   background: none;
   z-index: 2;
 }
@@ -1900,7 +1909,7 @@ select.has-arrow + .select-arrow {
 
 .select2-container--default .select2-selection--multiple {
   height: auto;
-  padding: 9px 18px 9px;
+  padding: 1.4rem-0.3rem 1.8rem 1.4rem-0.3rem;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered {
@@ -1913,7 +1922,7 @@ select.has-arrow + .select-arrow {
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
   padding: 0 4px;
-  margin: 3px 8px 3px 0;
+  margin: 0.3rem 8px 0.3rem 0;
   border: none;
 }
 
@@ -1942,7 +1951,7 @@ select.has-arrow + .select-arrow {
 }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple, .select2-container--default.select2-container--focus .select2-selection--single, .select2-container--default.select2-container--open .select2-selection--multiple, .select2-container--default.select2-container--open .select2-selection--single {
-  border: 1px solid #a6a6a6;
+  border: 0.1rem solid #a6a6a6;
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
@@ -1974,19 +1983,19 @@ select.has-arrow + .select-arrow {
 }
 
 .select2-dropdown {
-  border: 1px solid #a6a6a6;
+  border: 0.1rem solid #a6a6a6;
   border-radius: 0;
   z-index: 9999;
 }
 
 .select2-results__options {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1.6rem;
+  line-height: 2rem;
 }
 
 .select2-results__option {
-  padding: 8px 18px;
+  padding: 8px 1.8rem;
 }
 
 .filled + .select2 .select2-selection, .filled + .select2 .select2-selection__rendered, .filled + .select2 .select2-selection__placeholder {
@@ -2114,7 +2123,7 @@ select.has-arrow + .select-arrow {
 
 @media (max-width: 639px) {
   .error-feedback, .success-feedback {
-    margin-top: -3rem;
+    margin-top: -2.5rem;
   }
 }
 

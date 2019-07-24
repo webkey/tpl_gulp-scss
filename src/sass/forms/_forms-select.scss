@@ -14,19 +14,18 @@ select {
 
 .article-content, .select, .article-content .select {
   select {
-    @include selectSelection;
-
     display: block;
     position: relative;
     overflow: hidden;
     text-overflow: "";
-    cursor: pointer;
     white-space: nowrap;
+    @include select-common;
+    @include select-font;
 
-    // Стили для текста полей ввода прописываем отдельно через миксин,
-    // чтобы была возможность добавить медиа развилки через тот же миксин
-    & {
-      @include selects-font;
+    // ------ mob -----------------------------------------
+    @include media($form-media--mob) {
+      @include select-common--mob;
+      @include select-font--mob;
     }
   }
 }
@@ -52,9 +51,8 @@ select {
     position: absolute;
     right: 22px;
     top: 50%;
-
-    @include size(8px, 2px);
-
+    width: 8px;
+    height: 2px;
     background-color: $text-color;
     margin-top: -1px;
     z-index: 1;
@@ -147,11 +145,6 @@ select.has-arrow {
     height: $form-input-height;
     width: $select-arrow-width;
     margin-top: calc(-#{$form-bottom-space} - #{$form-input-height});
-
-    @include font-size(0, 0);
-
-    @include media("<mob") {
-      margin-top: calc(-#{$form-bottom-space--mob} - #{$form-input-height});
-    }
+    @include font-size(0);
   }
 }

@@ -14,11 +14,11 @@
 }
 
 .select2-container--default .select2-selection {
-  @include selectSelection;
+  @include select-common;
 }
 
 .select2-container--default .select2-selection .select2-selection__rendered {
-  @include selects-font;
+  @include select-font;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b {

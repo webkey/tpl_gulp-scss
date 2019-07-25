@@ -2,7 +2,8 @@
 @import "../utils/mixins";
 @import "../../libs/include-media/dist/include-media";
 
-// Label
+// ====================================================
+// LABEL
 // ====================================================
 
 label {
@@ -21,10 +22,12 @@ label {
   }
 }
 
-// Form fields
+// ====================================================
+// ОБЩИЕ стили для полей ввода
 // ====================================================
 
-// Общие стили для полей ввода
+// После задания размеров поля ввода,
+// всегда нужно проверять внутренние отступы и высоту
 .form-def {
   $form-def: &; // Ссылка на текущий класс
 
@@ -40,13 +43,22 @@ label {
     @include forms-space--mob;
   }
 
-  // Textarea
+  // Для последний элемент обнулить нижний отступ
   // ----------------------------------------------------
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+
+  // ====================================================
+  // TEXTAREA
+  // ====================================================
+
   // Дополнительные стили для <textarea>
   @at-root {
     textarea#{$form-def} {
       $lines: 3;
-      $height: round($form-line-height * $lines) + $form-input-space-vt + $form-input-space-vb + round($form-border-width * 2);
+      $height: round-float($form-line-height * $lines, 1) + $form-input-space-vt + $form-input-space-vb + round-float(px-to-rem($form-border-width) * 2, 1);
 
       min-height: $height;
       height: $height;
@@ -55,7 +67,7 @@ label {
       // ------ mob -----------------------------------------
       @include media($form-media--mob) {
         $lines: 3;
-        $height: round($form-line-height--mob * $lines) + $form-input-space-vt--mob + $form-input-space-vb--mob + round($form-border-width--mob * 2);
+        $height: round($form-line-height--mob * $lines) + $form-input-space-vt--mob + $form-input-space-vb--mob + round(px-to-rem($form-border-width--mob) * 2);
 
         min-height: $height;
         height: $height;
@@ -63,45 +75,90 @@ label {
     }
   }
 
-  // Для последний элемент обнулить нижний отступ
-  &:last-child {
-    margin-bottom: 0;
+
+  // ====================================================
+  // SELECT
+  // ====================================================
+
+  // После задания размеров поля ввода
+  // всегда нужно проверять внутренние отступы и высоту
+  @at-root {
+    select#{$form-def} {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      text-overflow: clip;
+      white-space: nowrap;
+      @include select-common;
+      @include select-font;
+
+      // ------ mob -----------------------------------------
+      @include media($form-media--mob) {
+        @include select-common--mob;
+        @include select-font--mob;
+      }
+
+      // Select has custom arrow
+      // ----------------------------------------------------
+      // Add class .has-arrow to the select
+      &.has-arrow {
+        // Remove default arrow (ff)
+        appearance: none;
+
+        // Remove default arrow (ie)
+        &::-ms-expand {
+          display: none;
+        }
+
+        // Add div.select-arrow after the select
+        & + .select-arrow {
+          float: right;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          height: $form-input-height;
+          width: $select-arrow-width;
+          margin-top: -#{$form-bottom-space + $form-input-height};
+          @include font-size(0);
+
+          // ------ mob -----------------------------------------
+          @include media($form-media--mob) {
+            height: $form-input-height--mob;
+            width: $select-arrow-width--mob;
+            margin-top: -#{$form-bottom-space--mob + $form-input-height--mob};
+          }
+        }
+      }
+    }
   }
 
-  // Focus
-  &:focus {
-    border-color: $form-border-color--focus;
-  }
+
+  // ====================================================
+  // STATES
+  // ====================================================
 
   // Hover
+  // ----------------------------------------------------
   &:hover {
     border-color: $form-border-color--focus;
   }
 
-  // Focus (js classes)
+  // Focus
+  // ----------------------------------------------------
+  &:focus,
   &.focused {
     @include focused;
   }
 
-  // Has value (js classes)
-  // Label
-  @at-root label {
-    &.filled {
-      @include filled;
-    }
-  }
-
+  // Has value
+  // ----------------------------------------------------
   &.filled {
     @include filled;
   }
 
   // Success
-  @at-root label {
-    &.success {
-      @include form-success;
-    }
-  }
-
+  // ----------------------------------------------------
   &.success {
     @include form-success;
 
@@ -112,13 +169,7 @@ label {
   }
 
   // Error
-
-  @at-root label {
-    &.error {
-      @include form-error;
-    }
-  }
-
+  // ----------------------------------------------------
   &.error {
     @include form-error;
 
@@ -129,18 +180,14 @@ label {
   }
 
   // Disabled
+  // ----------------------------------------------------
   &[disabled] {
-    cursor: default !important;
-    color: $form-text-color--disabled !important;
-    background-color: $form-bg-color--disabled !important;
-    border-color: $form-border-color--disabled !important;
-    box-shadow: none !important;
+    @include forms-disabled;
 
     @include placeholder {
       color: $form-text-color--disabled !important;
     }
   }
-
 
   // Placeholder
   // ----------------------------------------------------

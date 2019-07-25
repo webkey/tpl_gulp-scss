@@ -489,6 +489,10 @@ body {
 /* ==================================== */
 /* ============ TYPOGRAPHY ============ */
 /* ==================================== */
+body *::-moz-selection {
+  background-color: #ee6e73;
+  color: #50ebe5;
+}
 body *::selection {
   background-color: #ee6e73;
   color: #50ebe5;

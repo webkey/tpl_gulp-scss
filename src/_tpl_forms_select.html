@@ -1,6 +1,6 @@
 <label for="@@id">@@label <mark>*</mark></label>
 <select
-    class="form-def@@if(context.arrow){ has-arrow} field-js"
+    class="form-def@@if(context.class){ @@class} field-js"
     id="@@id"
     name="@@id"
     @@if(context.disabled){ disabled}
@@ -17,4 +17,3 @@
   <option value="7"@@if(context.selected == "7"){ selected}>Option 7</option>
   <option value="8"@@if(context.selected == "8"){ selected}>Option 8</option>
 </select>
-@@if(context.arrow){<div class="select-arrow">@@include("includes/svg/icon-angle.svg")</div>}

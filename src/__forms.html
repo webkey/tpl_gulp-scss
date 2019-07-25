@@ -253,10 +253,10 @@ include("_tpl_forms_textarea.html", {
     <h3>Default select with custom arrow</h3>
     <pre>include("_tpl_forms_select.html", {
   "label": "Label:",
+  "class": "has-arrow",
   "id": "id",
   "disabled": "",
-  "selected": "", // В значении указать value нужного опшина
-  "arrow": "true"
+  "selected": "" // В значении указать value нужного опшина
 })</pre>
     <pre>&lt;label for="id"&gt;Label: &lt;mark&gt;*&lt;/mark&gt;&lt;/label&gt;
 &lt;select class="form-def has-arrow" id="id" name="id" required&gt;
@@ -268,37 +268,41 @@ include("_tpl_forms_textarea.html", {
       <!--=== Default ===-->
       @@include("_tpl_forms_select.html", {
       "label": "Default:",
-      "id": "selectArrowDefault",
-      "arrow": "true"
+      "class": "has-arrow",
+      "id": "selectArrowDefault"
       })
+      <div class="select-arrow">@@include("includes/svg/icon-angle.svg")</div>
       @@include("_tpl_forms_valid.html")
 
       <!--=== Disabled ===-->
       @@include("_tpl_forms_select.html", {
       "label": "Disabled:",
+      "class": "has-arrow",
       "id": "selectArrowDisabled",
-      "disabled": "true",
-      "arrow": "true"
+      "disabled": "true"
       })
+      <div class="select-arrow">@@include("includes/svg/icon-angle.svg")</div>
       @@include("_tpl_forms_valid.html")
 
       <!--=== Selected ===-->
       @@include("_tpl_forms_select.html", {
       "label": "Selected:",
+      "class": "has-arrow",
       "id": "selectArrowSelected",
-      "selected": "1",
-      "arrow": "true"
+      "selected": "1"
       })
+      <div class="select-arrow">@@include("includes/svg/icon-angle.svg")</div>
       @@include("_tpl_forms_valid.html")
 
       <!--=== Selected and Disabled ===-->
       @@include("_tpl_forms_select.html", {
       "label": "Selected and Disabled:",
+      "class": "has-arrow",
       "id": "selectArrowSelectedDisabled",
       "disabled": "true",
-      "selected": "1",
-      "arrow": "true"
+      "selected": "1"
       })
+      <div class="select-arrow">@@include("includes/svg/icon-angle.svg")</div>
       @@include("_tpl_forms_valid.html")
 
       <!--=== === ===--><br>
@@ -307,14 +311,12 @@ include("_tpl_forms_textarea.html", {
     <br><br>
     <hr>
 
-    <!--=== SELECT 2 ===-->
-    <h3>Select 2</h3>
-    <pre>include("_tpl_forms_select.html", {
-  "label": "Label:",
+    <!--=== SELECT2 ===-->
+    <h3>Select2</h3>
+    <pre>include("_tpl_forms_select2.html", {"label": "Label:",
   "id": "id",
   "disabled": "",
-  "selected": "", // В значении указать value нужного опшина
-  "arrow": "true"
+  "selected": "" // В значении указать value нужного опшина
 })</pre>
     <pre>&lt;label for="id"&gt;Label: &lt;mark&gt;*&lt;/mark&gt;&lt;/label&gt;
 &lt;select class="form-def has-arrow" id="id" name="id" required&gt;
@@ -326,14 +328,14 @@ include("_tpl_forms_textarea.html", {
       <!--=== Default ===-->
       @@include("_tpl_forms_select2.html", {
       "label": "Default:",
-      "id": "select2Default"
+      "id": "s2-def"
       })
       @@include("_tpl_forms_valid.html")
 
       <!--=== Disabled ===-->
       @@include("_tpl_forms_select2.html", {
       "label": "Disabled:",
-      "id": "select2Disabled",
+      "id": "s2-disabled",
       "disabled": "true"
       })
       @@include("_tpl_forms_valid.html")
@@ -341,7 +343,7 @@ include("_tpl_forms_textarea.html", {
       <!--=== Default with placeholder ===-->
       @@include("_tpl_forms_select2.html", {
       "label": "Default with placeholder:",
-      "id": "select2DefaultWithPlaceholder",
+      "id": "s2-def-placeholder",
       "placeholder": "- Placeholder -"
       })
       @@include("_tpl_forms_valid.html")
@@ -349,7 +351,7 @@ include("_tpl_forms_textarea.html", {
       <!--=== Disabled with placeholder ===-->
       @@include("_tpl_forms_select2.html", {
       "label": "Disabled with placeholder:",
-      "id": "select2DisabledWithPlaceholder",
+      "id": "s2-disabled-placeholder",
       "placeholder": "- Placeholder -",
       "disabled": "true"
       })
@@ -358,7 +360,7 @@ include("_tpl_forms_textarea.html", {
       <!--=== Selected ===-->
       @@include("_tpl_forms_select2.html", {
       "label": "Selected:",
-      "id": "select2Selected",
+      "id": "s2-selected",
       "selected": "1"
       })
       @@include("_tpl_forms_valid.html")
@@ -366,8 +368,43 @@ include("_tpl_forms_textarea.html", {
       <!--=== Selected and Disabled ===-->
       @@include("_tpl_forms_select2.html", {
       "label": "Selected and Disabled:",
-      "id": "select2SelectedDisabled",
+      "id": "s2-selected-disabled",
       "disabled": "true",
+      "selected": "1"
+      })
+      @@include("_tpl_forms_valid.html")
+
+      <!--=== Multiple ===-->
+      @@include("_tpl_forms_select2.html", {
+      "label": "Multiple:",
+      "id": "s2-disabled",
+      "multiple": "multiple"
+      })
+      @@include("_tpl_forms_valid.html")
+
+      <!--=== Multiple Disabled ===-->
+      @@include("_tpl_forms_select2.html", {
+      "label": "Multiple Disabled:",
+      "id": "s2-multiple-disabled",
+      "disabled": "disabled"
+      })
+      @@include("_tpl_forms_valid.html")
+
+      <!--=== Multiple Selected ===-->
+      @@include("_tpl_forms_select2.html", {
+      "label": "Multiple Selected:",
+      "id": "s2-multiple-selected",
+      "multiple": "multiple",
+      "selected": "1"
+      })
+      @@include("_tpl_forms_valid.html")
+
+      <!--=== Multiple Selected and Disabled ===-->
+      @@include("_tpl_forms_select2.html", {
+      "label": "Multiple Selected and Disabled:",
+      "id": "s2-multiple-selected-disabled",
+      "multiple": "multiple",
+      "disabled": "disabled",
       "selected": "1"
       })
       @@include("_tpl_forms_valid.html")

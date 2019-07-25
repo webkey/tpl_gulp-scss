@@ -368,7 +368,6 @@ $form-border-radius--mob: 5px !default;
   width: 100%;
   padding: $form-input-space-vt $form-input-space-h $form-input-space-vb $form-input-space-h;
   background-color: $form-bg-color;
-  border-radius: $form-border-radius;
   box-shadow: none;
   @if $form-border-width {
     border: $form-border-width solid $form-border-color;
@@ -425,7 +424,7 @@ $select-arrow-height--mob: $form-input-height--mob !default;
   padding: $form-input-space-vt $select-arrow-width $form-input-space-vb $select-space-h;
   background: $form-bg-color;
   border: #{$form-border-width} solid #{$form-border-color};
-  border-radius: 0;
+  border-radius: 5px;
   box-shadow: none;
   text-indent: 0;
   outline: none;

@@ -1208,7 +1208,6 @@ label mark {
   width: 100%;
   padding: 1.1rem 1.8rem 1.1rem 1.8rem;
   background-color: #fff;
-  border-radius: 5px;
   box-shadow: none;
   border: 1px solid #d9d9d9;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -1229,6 +1228,10 @@ label mark {
     line-height: 1.8rem;
     margin: 0 0 2.5rem;
   }
+}
+
+.form-def, input.form-def {
+  border-radius: 5px;
 }
 
 .form-def:last-child {
@@ -1259,7 +1262,7 @@ select.form-def {
   padding: 1.1rem 4rem 1.1rem 1.2rem;
   background: #fff;
   border: 1px solid #d9d9d9;
-  border-radius: 0;
+  border-radius: 5px;
   box-shadow: none;
   text-indent: 0;
   outline: none;
@@ -1677,7 +1680,7 @@ select.form-def.has-arrow + .select-arrow {
   padding: 1.1rem 4rem 1.1rem 1.2rem;
   background: #fff;
   border: 1px solid #d9d9d9;
-  border-radius: 0;
+  border-radius: 5px;
   box-shadow: none;
   text-indent: 0;
   outline: none;

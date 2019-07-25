@@ -43,6 +43,15 @@ label {
     @include forms-space--mob;
   }
 
+  // В reset на input-елементах обнулены закрукления.
+  // Перебить их можно сложным селектором.
+  // Например, input.btn-def
+  @at-root {
+    #{$form-def}, input#{$form-def} {
+      border-radius: $form-border-radius;
+    }
+  }
+
   // Для последний элемент обнулить нижний отступ
   // ----------------------------------------------------
   &:last-child {
@@ -89,6 +98,9 @@ label {
       overflow: hidden;
       text-overflow: clip;
       white-space: nowrap;
+      // Если стили селектов не отличаются от инпутов,
+      // то из select-common и select-font
+      // можно удалить дублирующие свойства
       @include select-common;
       @include select-font;
 

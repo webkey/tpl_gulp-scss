@@ -58,13 +58,11 @@ function formElementState() {
 function customSelect(select) {
   $.each(select, function () {
     var $thisSelect = $(this);
-    // var placeholder = $thisSelect.attr('data-placeholder') || '';
     $thisSelect.select2({
       language: "ru",
       width: '100%',
       containerCssClass: 'cselect-head',
       dropdownCssClass: 'cselect-drop'
-      // , placeholder: placeholder
     });
   })
 }
@@ -80,7 +78,7 @@ function formValidation() {
     }
   });
 
-  var $form = $('.form-validate-js');
+  var $form = $('.validate-js');
 
   if ($form.length) {
     var changeClasses = function (elem, remove, add) {

@@ -489,10 +489,6 @@ body {
 /* ==================================== */
 /* ============ TYPOGRAPHY ============ */
 /* ==================================== */
-body *::-moz-selection {
-  background-color: #ee6e73;
-  color: #50ebe5;
-}
 body *::selection {
   background-color: #ee6e73;
   color: #50ebe5;
@@ -604,12 +600,12 @@ h6, .h6 {
   text-transform: uppercase;
 }
 
-p {
+p, pre {
   padding: 0;
   margin: 0 0 2.4rem;
 }
 
-p:last-child {
+p:last-child, pre:last-child {
   margin-bottom: 0;
 }
 
@@ -2220,7 +2216,7 @@ form .success + .select-arrow + .error-feedback + .success-feedback {
 }
 
 .mark {
-  color: #fd0cff;
+  color: #17a2b8;
 }
 
 .align-center {

@@ -208,10 +208,21 @@ $bottom-section--mob: round-float($line-height--mob * 1.5, 1) !default;
 
 // Colors
 // ====================================================
+$link-color: #007bff !default;
+$focus-color: #0080ff !default;
+$success-color: #28a745 !default;
+$error-color: #dc3545 !default;
+$info-color: #17a2b8 !default;
+$warning-color: #ffc107 !default;
+$light-color: #f8f9fa !default;
+$dark-color: #343a40 !default;
+// ----------------------------------------------------
 $base-color: #ee6e73 !default;
 $base-color-alt: invert($base-color) !default;
 // ----------------------------------------------------
-$highlight-color: #ee6e73 !default$highlight-color--hover: invert($base-color) !default// ----------------------------------------------------
+$highlight-color: #ee6e73 !default
+$highlight-color--hover: invert($base-color) !default
+// ----------------------------------------------------
 $bg-color: #fff !default;
 $bg-color-alt: #f3f3f3 !default;
 // ----------------------------------------------------
@@ -221,19 +232,9 @@ $text-color-light: #ccc !default;
 // ----------------------------------------------------
 $title-color: #ee6e73 !default;
 // ----------------------------------------------------
-$link-color: #007bff !default;
-$focus-color: #0080ff !default;
-// ----------------------------------------------------
 $border-color: #ccc !default;
 // ----------------------------------------------------
-$mark-color: #fd0cff !default;
-// ----------------------------------------------------
-$success-color: #28a745 !default;
-$error-color: #dc3545 !default;
-$info-color: #17a2b8 !default;
-$warning-color: #ffc107 !default;
-$light-color: #f8f9fa !default;
-$dark-color: #343a40 !default;
+$mark-color: $info-color !default;
 
 
 // Layout page

@@ -93,15 +93,13 @@ label {
   // всегда нужно проверять внутренние отступы и высоту
   @at-root {
     select#{$form-def} {
-      display: block;
-      position: relative;
-      overflow: hidden;
-      text-overflow: clip;
-      white-space: nowrap;
       // Если стили селектов не отличаются от инпутов,
       // то из select-common и select-font
       // можно удалить дублирующие свойства
       @include select-common;
+      overflow: hidden;
+      text-overflow: clip;
+      white-space: nowrap;
       @include select-font;
 
       // ------ mob -----------------------------------------

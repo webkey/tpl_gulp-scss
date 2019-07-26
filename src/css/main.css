@@ -1204,6 +1204,8 @@ label mark {
 }
 
 .form-def {
+  display: block;
+  position: relative;
   height: 4.8rem;
   width: 100%;
   padding: 1.1rem 1.8rem 1.1rem 1.8rem;
@@ -1254,9 +1256,6 @@ textarea.form-def {
 select.form-def {
   display: block;
   position: relative;
-  overflow: hidden;
-  text-overflow: clip;
-  white-space: nowrap;
   height: 4.8rem;
   width: 100%;
   padding: 1.1rem 4rem 1.1rem 1.2rem;
@@ -1266,6 +1265,14 @@ select.form-def {
   box-shadow: none;
   text-indent: 0;
   outline: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.6rem;
   line-height: 2.4rem;
@@ -1666,15 +1673,25 @@ select.form-def.has-arrow + .select-arrow {
   transform: scale3d(1, 1, 1);
 }
 
-.select2 {
+.cselect {
+  opacity: 0;
+}
+
+.no-js .cselect {
+  opacity: 1;
+}
+
+.select2-container {
   margin: 0 0 3rem;
 }
 
-.select2:last-child {
+.select2-container:last-child {
   margin-bottom: 0;
 }
 
-.select2-container--default .select2-selection {
+.select2-container .select2-selection {
+  display: block;
+  position: relative;
   height: 4.8rem;
   width: 100%;
   padding: 1.1rem 4rem 1.1rem 1.2rem;
@@ -1684,13 +1701,105 @@ select.form-def.has-arrow + .select-arrow {
   box-shadow: none;
   text-indent: 0;
   outline: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
-.select2-container--default .select2-selection .select2-selection__rendered {
+.select2-container .select2-selection .select2-selection__rendered {
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding: 0;
+}
+
+.select2-container .select2-selection--multiple {
+  height: auto;
+  min-height: 4.8rem;
+  padding: 0.9rem 1rem 0.9rem;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+  padding: 0;
+}
+
+.select2-container .select2-search--inline {
+  float: left;
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+  border: none;
+  font-size: 100%;
+  margin-top: 0;
+  padding: 0;
+}
+
+.select2-dropdown {
+  border: 1px solid #a6a6a6;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.select2-results__option {
+  padding: 0.5rem 1.8rem;
+}
+
+.select2-container--open .select2-dropdown--above {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.select2-container--open .select2-dropdown--below {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.select2-search--dropdown {
+  padding: 0.5rem;
+}
+
+.select2-search--dropdown .select2-search__field {
+  padding: 0.5rem;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: #262626;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  color: #cccccc;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4rem;
+  height: auto;
+  background: none;
+  z-index: 5;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border: none;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b::before, .select2-container--default .select2-selection--single .select2-selection__arrow b::after {
@@ -1716,187 +1825,89 @@ select.form-def.has-arrow + .select-arrow {
   right: 17px;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-  padding-left: 0;
-  padding-right: 0;
+.select2-container--default.select2-container--disabled .select2-container--default .select2-selection--single {
+  cursor: default !important;
+  color: #ced4da !important;
+  background-color: #e9ecef !important;
+  border-color: #ced4da !important;
+  box-shadow: none !important;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 4rem;
-  height: 4.8rem;
-  background: none;
-  z-index: 2;
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b::before {
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
 }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow b {
-  border: none;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-}
-
-.select2-container--default .select2-search--inline .select2-search__field {
-  height: auto;
-  margin: 0;
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b::after {
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
 }
 
 .select2-container--default .select2-selection--multiple {
-  height: auto;
-  padding: 0.8rem 1.8rem 0.8rem;
+  cursor: text;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered {
-  padding-left: 0;
-  padding-right: 0;
+  box-sizing: border-box;
+  list-style: none;
   margin: 0;
-  vertical-align: top;
-  max-width: none;
+  padding: 0 5px;
+  width: 100%;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
-  padding: 0 4px;
-  margin: 0.3rem 8px 0.3rem 0;
-  border: none;
+  list-style: none;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__rendered li::before {
-  content: none;
+.select2-container--default .select2-selection--multiple .select2-selection__placeholder {
+  color: #999;
+  margin-top: 5px;
+  float: left;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__clear {
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-right: 10px;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: #f3f3f3;
-  border: 1px solid #f3f3f3;
-  border-radius: 0;
-  color: #262626;
+  background-color: #e4e4e4;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: default;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0 5px;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-  color: #262626;
+  color: #999;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 2px;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
-  color: #007bff;
+  color: #333;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__placeholder,
-.select2-container--default .select2-selection--multiple .select2-selection__placeholder {
-  color: #cccccc;
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border: solid black 1px;
+  outline: 0;
 }
 
-.select2-container--default.select2-container--focus .select2-selection--multiple, .select2-container--default.select2-container--focus .select2-selection--single, .select2-container--default.select2-container--open .select2-selection--multiple, .select2-container--default.select2-container--open .select2-selection--single {
-  border: 1px solid #a6a6a6;
+.select2-container--default.select2-container--disabled .select2-selection--multiple {
+  background-color: #eee;
+  cursor: default;
 }
 
-.select2-container--default .select2-search--dropdown .select2-search__field {
-  margin: 0;
-  height: 34px;
-  padding: 4px;
-  border-color: #d9d9d9;
-  border-width: 1px;
-  line-height: 24px;
-}
-
-.select2-container--default .select2-search--dropdown .select2-search__field:focus {
-  border-color: #a6a6a6;
-  box-shadow: none;
-}
-
-.select2-container--default .select2-results > .select2-results__options {
-  max-height: 200px;
-}
-
-.select2-container--default .select2-results__option[aria-selected=true] {
-  background-color: #f3f3f3;
-  color: #262626;
-}
-
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
-  background-color: #ee6e73;
-  color: #fff;
-}
-
-.select2-dropdown {
-  border: 1px solid #a6a6a6;
-  border-radius: 0;
-  z-index: 9999;
-}
-
-.select2-results__options {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-}
-
-.select2-results__option {
-  padding: 8px 1.8rem;
-}
-
-.filled + .select2 .select2-selection, .filled + .select2 .select2-selection__rendered, .filled + .select2 .select2-selection__placeholder {
-  color: slateblue;
-  border-color: slateblue;
-}
-
-.success + .select2 .select2-selection, .success + .select2 .select2-selection__rendered, .success + .select2 .select2-selection__placeholder {
-  color: #28a745;
-  border-color: #28a745;
-}
-
-.error + .select2 .select2-selection, .error + .select2 .select2-selection__rendered, .error + .select2 .select2-selection__placeholder {
-  color: #dc3545;
-  border-color: #dc3545;
-}
-
-.focused + .select2 .select2-selection, .focused + .select2 .select2-selection__rendered, .focused + .select2 .select2-selection__placeholder {
-  border-color: #a6a6a6;
-}
-
-.success + .select2 .select2-search__field::-webkit-input-placeholder {
-  color: #28a745;
-}
-
-.success + .select2 .select2-search__field:-moz-placeholder {
-  color: #28a745;
-}
-
-.success + .select2 .select2-search__field::-moz-placeholder {
-  opacity: 1;
-  color: #28a745;
-}
-
-.success + .select2 .select2-search__field:-ms-input-placeholder {
-  opacity: 1;
-  color: #28a745;
-}
-
-.success + .select2 .select2-search__field.placeholder {
-  color: #28a745;
-}
-
-.error + .select2 .select2-search__field::-webkit-input-placeholder {
-  color: #dc3545;
-}
-
-.error + .select2 .select2-search__field:-moz-placeholder {
-  color: #dc3545;
-}
-
-.error + .select2 .select2-search__field::-moz-placeholder {
-  opacity: 1;
-  color: #dc3545;
-}
-
-.error + .select2 .select2-search__field:-ms-input-placeholder {
-  opacity: 1;
-  color: #dc3545;
-}
-
-.error + .select2 .select2-search__field.placeholder {
-  color: #dc3545;
+.select2-container--default.select2-container--disabled .select2-selection__choice__remove {
+  display: none;
 }
 
 .captcha {

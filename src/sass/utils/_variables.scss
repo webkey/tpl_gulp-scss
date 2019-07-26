@@ -365,6 +365,8 @@ $form-border-radius--mob: 5px !default;
 // Input common styles mixin
 // ====================================================
 @mixin input-common {
+  display: block;
+  position: relative;
   height: $form-input-height;
   width: 100%;
   padding: $form-input-space-vt $form-input-space-h $form-input-space-vb $form-input-space-h;
@@ -411,15 +413,15 @@ $form-border-radius--mob: 5px !default;
 // ====================================================
 $select-space-h: 1.2rem !default;
 $select-arrow-width: 4.0rem !default;
-$select-arrow-height: $form-input-height !default;
 $multiple-item-space: 0.3rem !default;
 // ------ mob -----------------------------------------
 $select-space-h--mob: 1.2rem !default;
 $select-arrow-width--mob: 4.0rem !default;
-$select-arrow-height--mob: $form-input-height--mob !default;
 // Select common styles mixin
 // ====================================================
 @mixin select-common() {
+  display: block;
+  position: relative;
   height: $form-input-height;
   width: 100%;
   padding: $form-input-space-vt $select-arrow-width $form-input-space-vb $select-space-h;
@@ -429,6 +431,8 @@ $select-arrow-height--mob: $form-input-height--mob !default;
   box-shadow: none;
   text-indent: 0;
   outline: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 // ------ mob -----------------------------------------

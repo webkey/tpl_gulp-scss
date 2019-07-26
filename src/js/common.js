@@ -55,16 +55,22 @@ function formElementState() {
 /**
  * !Initial custom select for cross-browser styling
  * */
-function customSelect(select) {
-  $.each(select, function () {
-    var $thisSelect = $(this);
-    $thisSelect.select2({
-      language: "ru",
-      width: '100%',
-      containerCssClass: 'cselect-head',
-      dropdownCssClass: 'cselect-drop'
-    });
-  })
+function customSelect() {
+  var $select = $('select.cselect');
+
+  if ($select.length) {
+    $.each($select, function () {
+      var $thisSelect = $(this);
+      $thisSelect.select2({
+        // theme: 'custom',
+        language: 'ru',
+        width: '100%',
+        containerCssClass: 'cselect-head',
+        dropdownCssClass: 'cselect-drop'
+      });
+    })
+
+  }
 }
 
 /**
@@ -128,7 +134,7 @@ $(document).ready(function () {
   addTouchClasses();
   placeholderInit();
   formElementState();
-  customSelect($('select.cselect'));
+  customSelect();
   objectFitImages(); // object-fit-images initial
 
   formValidation();

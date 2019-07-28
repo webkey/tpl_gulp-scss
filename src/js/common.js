@@ -62,7 +62,7 @@ function customSelect() {
     $.each($select, function () {
       var $thisSelect = $(this);
       $thisSelect.select2({
-        // theme: 'custom',
+        theme: 'custom',
         language: 'ru',
         width: '100%',
         containerCssClass: 'cselect-head',

@@ -256,7 +256,7 @@
   "id": "id",
   "class": "",        // "some-class", дополнительный класс
   "disabled": "",     // "disabled"
-  "selected": ""      // В значении указать value нужного опшина
+  "selected": ""      // "true", выбрать второй опшин для примера
 })</pre>
     <pre>
 &#64;&#64;include("_tpl_forms_valid.html")</pre>
@@ -296,7 +296,7 @@
       @@include("_tpl_forms_select.html", {
       "label": "Selected:",
       "id": "selectSelected",
-      "selected": "1"
+      "selected": "true"
       })
       @@include("_tpl_forms_valid.html")
 
@@ -305,7 +305,7 @@
       "label": "Selected and Disabled:",
       "id": "selectSelectedDisabled",
       "disabled": "disabled",
-      "selected": "1"
+      "selected": "true"
       })
       @@include("_tpl_forms_valid.html")
 
@@ -326,7 +326,7 @@
   "id": "id",
   "class": "has-arrow",  // На селек нужно добавить дополнительный класс "has-arrow"
   "disabled": "",        // "disabled"
-  "selected": ""         // В значении указать value нужного опшина
+  "selected": ""         // "true", выбрать второй опшин для примера
 })</pre>
     <pre>
 &lt;div class="select-arrow"&gt;&#64;&#64;include("includes/svg/icon-angle.svg")&lt;/div&gt;</pre>
@@ -379,7 +379,7 @@
       "label": "Selected:",
       "class": "has-arrow",
       "id": "selectArrowSelected",
-      "selected": "1"
+      "selected": "true"
       })
       <div class="select-arrow">@@include("includes/svg/icon-angle.svg")</div>
       @@include("_tpl_forms_valid.html")
@@ -390,7 +390,7 @@
       "class": "has-arrow",
       "id": "selectArrowSelectedDisabled",
       "disabled": "disabled",
-      "selected": "1"
+      "selected": "true"
       })
       <div class="select-arrow">@@include("includes/svg/icon-angle.svg")</div>
       @@include("_tpl_forms_valid.html")
@@ -412,7 +412,7 @@
   "class": "",     // "some-class", дополнительный класс
   "multiple": "",  // "multiple"
   "disabled": "",  // "disabled"
-  "selected": ""   // В значении указать value нужного опшина
+  "selected": ""   // "true", выбрать второй опшин для примера
 })</pre>
     <pre>
 &#64;&#64;include("_tpl_forms_valid.html")</pre>
@@ -471,7 +471,7 @@
       @@include("_tpl_forms_select2.html", {
       "label": "Selected:",
       "id": "s2-sel",
-      "selected": "1"
+      "selected": "true"
       })
       @@include("_tpl_forms_valid.html")
 
@@ -480,7 +480,7 @@
       "label": "Multiple Selected:",
       "id": "s2-mult-sel",
       "multiple": "multiple",
-      "selected": "1"
+      "selected": "true"
       })
       @@include("_tpl_forms_valid.html")
 
@@ -490,7 +490,7 @@
       "label": "Selected Disabled:",
       "id": "s2-sel-dis",
       "disabled": "disabled",
-      "selected": "1"
+      "selected": "true"
       })
       @@include("_tpl_forms_valid.html")
 
@@ -500,7 +500,7 @@
       "id": "s2-mult-sel-dis",
       "multiple": "multiple",
       "disabled": "disabled",
-      "selected": "1"
+      "selected": "true"
       })
       @@include("_tpl_forms_valid.html")
 

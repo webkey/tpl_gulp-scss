@@ -143,6 +143,18 @@ label {
     }
   }
 
+  // Placeholder
+  // ----------------------------------------------------
+  @include placeholder {
+    color: $form-placeholder-color;
+    transition: $animation-speed opacity;
+  }
+
+  // Placeholder hide on focus
+  @include placeholder-focus {
+    opacity: 0;
+  }
+
 
   // ====================================================
   // STATES
@@ -197,17 +209,5 @@ label {
     @include placeholder {
       color: $form-text-color--disabled !important;
     }
-  }
-
-  // Placeholder
-  // ----------------------------------------------------
-  @include placeholder {
-    color: $form-placeholder-color;
-    transition: $animation-speed opacity;
-  }
-
-  // Placeholder hide on focus
-  @include placeholder-focus {
-    opacity: 0;
   }
 }

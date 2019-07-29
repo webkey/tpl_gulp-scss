@@ -2563,38 +2563,12 @@ form .success + .select-arrow + .error-feedback + .success-feedback {
   position: relative;
 }
 
-.nav__list li .nav__angle {
-  display: none;
-}
-
-.nav__list li.has-drop {
-  padding-right: 2rem;
-}
-
-.nav__list li.has-drop > .nav__tab > .nav__angle {
-  display: block;
-}
-
-.nav__list li.has-drop .nav__angle {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -ms-transform: translate(0, -50%);
-      transform: translate(0, -50%);
-  line-height: 0;
-  pointer-events: none;
-}
-
-.nav__list a {
-  display: block;
-}
-
 .nav__list > li {
   float: left;
   margin-right: 2rem;
 }
 
-.nav__drop {
+.nav__list li > ul {
   position: absolute;
   left: 0;
   top: 100%;
@@ -2607,20 +2581,20 @@ form .success + .select-arrow + .error-feedback + .success-feedback {
   z-index: 10;
 }
 
-li:hover > .nav__drop {
-  opacity: 1;
-  visibility: visible;
-}
-
-.nav__drop li {
+.nav__list li > ul li {
   margin-bottom: 1rem;
   font-size: 1.4rem;
   line-height: 1.5;
 }
 
-.nav__drop .nav__drop {
+.nav__list li > ul ul {
   top: 0;
   left: 100%;
+}
+
+.nav__list li:hover > ul {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ==================================== */

@@ -164,70 +164,48 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
   @include clear;
 
   li {
     position: relative;
-
-    .nav__angle {
-      display: none;
-    }
-
-    &.has-drop {
-      padding-right: 2rem;
-
-      & > .nav__tab > .nav__angle {
-        display: block;
-      }
-
-      .nav__angle {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translate(0, -50%);
-        line-height: 0;
-        pointer-events: none;
-      }
-    }
   }
 
-  a {
-    display: block;
-  }
-
+  // Первый уровень
   & > li {
     float: left;
     margin-right: 2rem;
   }
 }
 
-.nav__drop {
-  position: absolute;
-  left: 0;
-  top: 100%;
-  background-color: white;
-  border: 1px solid $border-color;
-  padding: 2rem;
-  width: $layout-page-min-width;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 10;
+// Submenu
+.nav__list {
+  li > ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid $border-color;
+    padding: 2rem;
+    width: $layout-page-min-width;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
 
-  li:hover > & {
+    li {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      line-height: 1.5;
+    }
+
+    ul {
+      top: 0;
+      left: 100%;
+    }
+  }
+
+  li:hover > ul {
     opacity: 1;
     visibility: visible;
-  }
-
-  li {
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-    line-height: 1.5;
-  }
-
-  .nav__drop {
-    top: 0;
-    left: 100%;
   }
 }
 

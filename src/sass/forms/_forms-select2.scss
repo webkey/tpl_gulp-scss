@@ -18,11 +18,11 @@
 // ====================================================
 .select2-container--custom {
   // Нижний отступ
-  @include forms-space;
+  @include form-def-space;
 
   // ------ mob -----------------------------------------
   @include media($form-media--mob) {
-    @include forms-space--mob;
+    @include form-def-space--mob;
   }
 
   &:last-child {
@@ -61,7 +61,7 @@
 
     // Placeholder
     .select2-selection__placeholder {
-      color: $form-placeholder-color;
+      color: $select-placeholder-color;
     }
 
     // Clear button
@@ -125,17 +125,17 @@
   // ====================================================
   .select2-selection--multiple {
     height: auto;
-    min-height: $form-input-height;
+    min-height: $select-height;
     // Внутренние отступы поля выбора отличаются от single-селекта
     // По вертикали отступы должны быть меньше на расстояние между
     // активными опшинами мультиселекта + размер их бордера
-    padding: #{$form-input-space-vt - 0.4} $select-space-h #{$form-input-space-vb - 0.4};
+    padding: #{$select-space-vt - 0.4} $select-space-h #{$select-space-vb - 0.4};
     cursor: text;
 
     // ------ mob -----------------------------------------
     @include media($form-media--mob) {
-      min-height: $form-input-height--mob;
-      padding: #{$form-input-space-vt--mob - 0.4} $select-space-h--mob #{$form-input-space-vb--mob - 0.4};
+      min-height: $select-height--mob;
+      padding: #{$select-space-vt--mob - 0.4} $select-space-h--mob #{$select-space-vb--mob - 0.4};
     }
 
     .select2-selection__rendered {
@@ -167,8 +167,8 @@
       float: left;
       padding: 0 0.5rem;
       background-color: #e4e4e4;
-      border: 1px solid $form-border-color;
-      border-radius: $form-border-radius;
+      border: 1px solid $select-border-color;
+      border-radius: $select-border-radius;
       cursor: default;
       overflow: hidden;
       white-space: nowrap;
@@ -177,7 +177,7 @@
 
       // ------ mob -----------------------------------------
       @include media($form-media--mob) {
-        border-radius: $form-border-radius--mob;
+        border-radius: $select-border-radius--mob;
         max-width: 50%;
       }
     }
@@ -214,7 +214,7 @@
         transition: border $animation-speed;
 
         @include placeholder {
-          color: $form-placeholder-color;
+          color: $select-placeholder-color;
           transition: $animation-speed opacity;
         }
       }
@@ -323,15 +323,15 @@
   // Общие стили для выпадающего списка селекта
   .select2-dropdown {
     overflow: hidden; // Если есть закругления, то нужно обрезать внутренние элементы
-    border: $form-border-width solid $form-border-color--focus;
-    border-radius: $form-border-radius;
-    background-color: $form-bg-color;
+    border: $select-border-width solid $select-border-color--focus;
+    border-radius: $select-border-radius;
+    background-color: $select-bg-color;
     z-index: 5; // Поднять выше стрелок соседних селектов
 
     // ------ mob -----------------------------------------
     @include media($form-media--mob) {
-      border-width: $form-border-width--mob;
-      border-radius: $form-border-radius--mob;
+      border-width: $select-border-width--mob;
+      border-radius: $select-border-radius--mob;
     }
   }
 
@@ -363,10 +363,10 @@
     // Поле ввода <input>
     .select2-search__field {
       padding: 0.5rem;
-      border: 1px solid $form-border-color;
+      border: 1px solid $select-border-color;
 
       &:focus {
-        border-color: $form-border-color--focus;
+        border-color: $select-border-color--focus;
       }
     }
   }
@@ -393,11 +393,11 @@
 
   // Опшин
   .select2-results__option {
-    padding: 0.5rem $form-input-space-h;
+    padding: 0.5rem $select-space-h;
 
     // ------ mob -----------------------------------------
     @include media($form-media--mob) {
-      padding: 0.5rem $form-input-space-h--mob;
+      padding: 0.5rem $select-space-h--mob;
     }
 
     &[role=group] {

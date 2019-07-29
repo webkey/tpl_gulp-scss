@@ -3,30 +3,39 @@
 @import "../../libs/include-media/dist/include-media";
 
 // Form unit
-// =========
+// ====================================================
 
 .form-unit {
   position: relative;
   margin-bottom: $form-bottom-space;
 
+  // ------ mob -----------------------------------------
+  @include media($form-media--mob) {
+    margin-bottom: $form-bottom-space--mob;
+  }
+
+  // Нижние отступы у элементов форм необходимо обнулить
   .form-def, .form-radiocheck, .select2 {
     margin-bottom: 0;
   }
 
+  // Form validate feedback
+  // ----------------------------------------------------
   .error-feedback,
   .success-feedback {
     margin-top: 0;
     margin-bottom: -#{$validate-feedback-height};
   }
 
-  select.has-arrow {
+  // Select has custom arrow
+  // ----------------------------------------------------
+  select.form-def.has-arrow {
     & + .select-arrow {
-      margin-top: -#{$form-input-height};
+      margin-top: -#{$select-height};
 
-      @include font-size(0, 0);
-
-      @include media("<mob") {
-        margin-top: -#{$form-input-height};
+      // ------ mob -----------------------------------------
+      @include media($form-media--mob) {
+        margin-top: -#{$select-height--mob};
       }
     }
   }

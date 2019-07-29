@@ -33,14 +33,14 @@ label {
 
   @include input-common;
   @include input-font;
-  @include forms-space;
+  @include form-def-space;
   transition: color $animation-speed, border $animation-speed;
 
   // ------ mob -----------------------------------------
   @include media($form-media--mob) {
     @include input-common--mob;
     @include input-font--mob;
-    @include forms-space--mob;
+    @include form-def-space--mob;
   }
 
   // В reset на input-елементах обнулены закрукления.
@@ -48,7 +48,7 @@ label {
   // Например, input.btn-def
   @at-root {
     #{$form-def}, input#{$form-def} {
-      border-radius: $form-border-radius;
+      border-radius: $form-def-border-radius;
     }
   }
 
@@ -67,7 +67,7 @@ label {
   @at-root {
     textarea#{$form-def} {
       $lines: 3;
-      $height: round-float($form-line-height * $lines, 1) + $form-input-space-vt + $form-input-space-vb + round-float(px-to-rem($form-border-width) * 2, 1);
+      $height: round-float($form-def-line-height * $lines, 1) + $form-def-space-vt + $form-def-space-vb + round-float(px-to-rem($form-def-border-width) * 2, 1);
 
       min-height: $height;
       height: $height;
@@ -76,7 +76,7 @@ label {
       // ------ mob -----------------------------------------
       @include media($form-media--mob) {
         $lines: 3;
-        $height: round($form-line-height--mob * $lines) + $form-input-space-vt--mob + $form-input-space-vb--mob + round(px-to-rem($form-border-width--mob) * 2);
+        $height: round($form-def-line-height--mob * $lines) + $form-def-space-vt--mob + $form-def-space-vb--mob + round(px-to-rem($form-def-border-width--mob) * 2);
 
         min-height: $height;
         height: $height;
@@ -127,16 +127,16 @@ label {
           align-items: center;
           justify-content: center;
           position: relative;
-          height: $form-input-height;
+          height: $select-height;
           width: $select-arrow-width;
-          margin-top: -#{$form-bottom-space + $form-input-height};
+          margin-top: -#{$form-bottom-space + $select-height};
           @include font-size(0);
 
           // ------ mob -----------------------------------------
           @include media($form-media--mob) {
-            height: $form-input-height--mob;
+            height: $select-height--mob;
             width: $select-arrow-width--mob;
-            margin-top: -#{$form-bottom-space--mob + $form-input-height--mob};
+            margin-top: -#{$form-bottom-space--mob + $select-height--mob};
           }
         }
       }
@@ -146,7 +146,7 @@ label {
   // Placeholder
   // ----------------------------------------------------
   @include placeholder {
-    color: $form-placeholder-color;
+    color: $form-def-placeholder-color;
     transition: $animation-speed opacity;
   }
 
@@ -163,7 +163,7 @@ label {
   // Hover
   // ----------------------------------------------------
   &:hover {
-    border-color: $form-border-color--focus;
+    @include focused;
   }
 
   // Focus

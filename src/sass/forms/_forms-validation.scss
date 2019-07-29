@@ -3,20 +3,17 @@
 @import "../../libs/include-media/dist/include-media";
 
 // Validation feedback
-// ===================
+// ====================================================
 
 .error-feedback, .success-feedback {
   float: left;
   position: relative;
   width: 100%;
-
-  $space: round-float(($validate-feedback-height - $validate-feedback-line-height) / 2, 1);
-
   margin-top: -#{$form-bottom-space};
+  $space: round-float(($validate-feedback-height - $validate-feedback-line-height) / 2, 1);
   padding: #{$space} 0;
-
-  @include font-size($validate-feedback-font-size, $validate-feedback-line-height);
-
+  font-size: $validate-feedback-font-size;
+  line-height: $validate-feedback-line-height;
   letter-spacing: normal;
   display: none;
 

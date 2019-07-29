@@ -3,7 +3,7 @@
 @import "../../libs/include-media/dist/include-media";
 
 // Captcha
-// =======
+// ====================================================
 
 .captcha {
   position: relative;
@@ -18,34 +18,23 @@
   margin-bottom: $bottom-space;
 
   .captcha-ctrl__img {
-    display: inline-block;
-    vertical-align: middle;
     width: 180px;
     max-width: 50%;
-    @include font-size(1.2rem, 1.6rem);
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    letter-spacing: $letter-spacing;
   }
 
   .captcha-ctrl__refresh {
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-    letter-spacing: $letter-spacing;
 
     a {
       color: $text-color;
       text-decoration: none;
 
       span {
-        border-bottom: 1px dotted $text-color;
+        border-bottom: 1px dotted currentColor;
       }
 
       &:hover {
-        color: $link-color;
-
         span {
-          border-color: $link-color;
+          border-bottom-color: transparent;
         }
       }
     }

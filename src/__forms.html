@@ -565,15 +565,24 @@
       <div class="form-unit">
         @@include("_tpl_forms_input.html", {
         "label": "Input:",
-        "id": "unitInputDefault"
+        "id": "unitInputDef"
         })
         @@include("_tpl_forms_valid.html")
       </div>
       <div class="form-unit">
         @@include("_tpl_forms_select.html", {
         "label": "Select:",
-        "id": "unitSelectDefault"
+        "id": "unitSelectDef"
         })
+        @@include("_tpl_forms_valid.html")
+      </div>
+      <div class="form-unit">
+        @@include("_tpl_forms_select.html", {
+        "label": "Select with arrow:",
+        "id": "unitSelectArrow",
+        "class": "has-arrow"
+        })
+        <div class="select-arrow">@@include("includes/svg/icon-angle.svg")</div>
         @@include("_tpl_forms_valid.html")
       </div>
       <div class="form-unit">
@@ -646,6 +655,32 @@
           "id": "inputGroupFour"
           })
           @@include("_tpl_forms_valid.html")
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-group__item">
+          @@include("_tpl_forms_select.html", {
+          "label": "Five",
+          "id": "inputGroupFive"
+          })
+          @@include("_tpl_forms_valid.html")
+        </div>
+        <div class="form-group__item">
+          @@include("_tpl_forms_select.html", {
+          "label": "Six:",
+          "id": "inputGroupSix",
+          "class": "has-arrow"
+          })
+          <div class="select-arrow">@@include("includes/svg/icon-angle.svg")</div>
+          @@include("_tpl_forms_valid.html")
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-group__item_full-width">
+          <label class="form-radiocheck">
+            <input type="checkbox" name="checkbox">
+            <span>Название чекбокса</span>
+          </label>
         </div>
       </div>
 

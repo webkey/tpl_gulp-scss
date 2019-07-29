@@ -40,7 +40,9 @@
 </head>
 
 <body>
-  <noscript><div class="no-js-warning">Для корректной работы сайта <b>включите JavaScript</b> в браузере</div></noscript>
+  <noscript>
+    <div class="no-js-warning">Для корректной работы сайта <b>включите JavaScript</b> в браузере</div>
+  </noscript>
   <!--[if lte IE 9]>
 <div class="browserupgrade"><p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div> <![endif]-->
   <!--HEADER-->
@@ -388,27 +390,27 @@
         <p class="mark">Example:</p>
         <!--Long label-->
         <label class="form-radiocheck">
-        <input type="checkbox" name="checkbox" />
-        <span>Название чекбокса может содержать не только одну строку текста, но и более, а также <a href="#">ссылки</a> на внешние ресурсы</span>
-      </label>
+          <input type="checkbox" name="checkbox" />
+          <span>Название чекбокса может содержать не только одну строку текста, но и более, а также <a href="#">ссылки</a> на внешние ресурсы</span>
+        </label>
         <br>
         <!--Checked-->
         <label class="form-radiocheck">
-        <input type="checkbox" name="checkbox" checked />
-        <span>Название чекбокса</span>
-      </label>
+          <input type="checkbox" name="checkbox" checked />
+          <span>Название чекбокса</span>
+        </label>
         <br>
         <!--Disabled-->
         <label class="form-radiocheck">
-        <input type="checkbox" name="checkbox" disabled />
-        <span>Disabled</span>
-      </label>
+          <input type="checkbox" name="checkbox" disabled />
+          <span>Disabled</span>
+        </label>
         <br>
         <!--Checked and disabled-->
         <label class="form-radiocheck">
-        <input type="checkbox" name="checkbox" checked disabled />
-        <span>Checked & Disabled</span>
-      </label>
+          <input type="checkbox" name="checkbox" checked disabled />
+          <span>Checked & Disabled</span>
+        </label>
         <br>
         <br>
         <br>
@@ -426,24 +428,24 @@
 &lt;/label&gt;</pre>
         <p class="mark">Example:</p>
         <label class="form-radiocheck">
-        <input type="radio" name="radio" />
-        <span>Yes</span>
-      </label>
+          <input type="radio" name="radio" />
+          <span>Yes</span>
+        </label>
         <br>
         <label class="form-radiocheck">
-        <input type="radio" name="radio" checked />
-        <span>No</span>
-      </label>
+          <input type="radio" name="radio" checked />
+          <span>No</span>
+        </label>
         <br>
         <label class="form-radiocheck">
-        <input type="radio" name="radioDis" disabled />
-        <span>Disabled</span>
-      </label>
+          <input type="radio" name="radioDis" disabled />
+          <span>Disabled</span>
+        </label>
         <br>
         <label class="form-radiocheck">
-        <input type="radio" name="radioChDis" checked disabled />
-        <span>Checked & Disabled</span>
-      </label>
+          <input type="radio" name="radioChDis" checked disabled />
+          <span>Checked & Disabled</span>
+        </label>
       </form>
       <br><br>
       <hr>
@@ -478,65 +480,65 @@
         <!--Default-->
         <label for="selectDefault">Default: <mark>*</mark></label>
         <select class="form-def field-js" id="selectDefault" name="selectDefault" required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Disabled-->
         <label for="selectDisabled">Disabled: <mark>*</mark></label>
         <select class="form-def field-js" id="selectDisabled" name="selectDisabled" disabled required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Selected-->
         <label for="selectSelected">Selected: <mark>*</mark></label>
         <select class="form-def field-js" id="selectSelected" name="selectSelected" required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2" selected>Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2" selected>Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Selected and Disabled-->
         <label for="selectSelectedDisabled">Selected and Disabled: <mark>*</mark></label>
         <select class="form-def field-js" id="selectSelectedDisabled" name="selectSelectedDisabled" disabled required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2" selected>Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2" selected>Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <br>
@@ -583,69 +585,77 @@
         <!--Default-->
         <label for="selectArrowDefault">Default: <mark>*</mark></label>
         <select class="form-def has-arrow field-js" id="selectArrowDefault" name="selectArrowDefault" required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
-        <div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg></div>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
+        <div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+          </svg></div>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Disabled-->
         <label for="selectArrowDisabled">Disabled: <mark>*</mark></label>
         <select class="form-def has-arrow field-js" id="selectArrowDisabled" name="selectArrowDisabled" disabled required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
-        <div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg></div>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
+        <div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+          </svg></div>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Selected-->
         <label for="selectArrowSelected">Selected: <mark>*</mark></label>
         <select class="form-def has-arrow field-js" id="selectArrowSelected" name="selectArrowSelected" required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2" selected>Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
-        <div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg></div>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2" selected>Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
+        <div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+          </svg></div>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Selected and Disabled-->
         <label for="selectArrowSelectedDisabled">Selected and Disabled: <mark>*</mark></label>
         <select class="form-def has-arrow field-js" id="selectArrowSelectedDisabled" name="selectArrowSelectedDisabled" disabled required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2" selected>Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
-        <div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg></div>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2" selected>Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
+        <div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+          </svg></div>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--===--><br>
@@ -686,198 +696,198 @@
         <!--Default-->
         <label for="s2-def">Default: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-def" name="s2-def" required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Multiple-->
         <label for="s2-mult">Multiple: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-mult" name="s2-mult" multiple required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <h4>Disabled</h4>
         <!--Disabled-->
         <label for="s2-dis">Disabled: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-dis" name="s2-dis" disabled required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Multiple Disabled-->
         <label for="s2-mult-dis">Multiple Disabled: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-mult-dis" name="s2-mult-dis" disabled required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <h4>Selected</h4>
         <!--Selected-->
         <label for="s2-sel">Selected: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-sel" name="s2-sel" required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2" selected>Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2" selected>Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Multiple Selected-->
         <label for="s2-mult-sel">Multiple Selected: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-mult-sel" name="s2-mult-sel" multiple required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2" selected>Option 2</option>
-  <option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4" selected>Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2" selected>Option 2</option>
+          <option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4" selected>Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <h4>Selected Disabled</h4>
         <!--Selected Disabled-->
         <label for="s2-sel-dis">Selected Disabled: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-sel-dis" name="s2-sel-dis" disabled required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2" selected>Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2" selected>Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Multiple Selected Disabled-->
         <label for="s2-mult-sel-dis">Multiple Selected Disabled: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-mult-sel-dis" name="s2-mult-sel-dis" disabled multiple required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2" selected>Option 2</option>
-  <option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4" selected>Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2" selected>Option 2</option>
+          <option value="3" selected>Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4" selected>Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <h4>Placeholder</h4>
         <!--Default with placeholder-->
         <label for="s2-def-plh">Default with placeholder: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-def-plh" name="s2-def-plh" data-placeholder="- Placeholder -" required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Multiple with placeholder-->
         <label for="s2-mult-plh">Multiple with placeholder: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-mult-plh" name="s2-mult-plh" data-placeholder="- Placeholder -" multiple required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <h4>Disabled Placeholder</h4>
         <!--Default Disabled with placeholder-->
         <label for="s2-dis-plh">Default Disabled with placeholder: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-dis-plh" name="s2-dis-plh" data-placeholder="- Placeholder -" disabled required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Multiple Disabled with placeholder-->
         <label for="s2-mult-dis-plh">Multiple Disabled with placeholder: <mark>*</mark></label>
         <select class="cselect form-def field-js" id="s2-mult-dis-plh" name="s2-mult-dis-plh" data-placeholder="- Placeholder -" disabled multiple required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <!--Important! The first element must have a value of ""-->
+          <option value="">- Choose option -</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+          <option value="8">Option 8</option>
+        </select>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <br>
@@ -887,7 +897,8 @@
       <hr>
       <!--FORM UNIT-->
       <h2>Form unit</h2>
-      <p>Котейнер объединяющий элементы относящиеся к одному <strong>полю ввода</strong>, <strong>селекту</strong>, или <strong>переключателю</strong>.<br> Используется для более правильного расположения элементов форм относительно друг друга.</p>
+      <p>Котейнер объединяющий элементы относящиеся к одному <strong>полю ввода</strong>, <strong>селекту</strong>, или <strong>переключателю</strong>.<br>
+        Используется для более правильного расположения элементов форм относительно друг друга.</p>
       <p class="mark">HTML:</p>
       <pre>
 &lt;div class="form-unit"&gt;
@@ -896,33 +907,53 @@
       <p class="mark">Example:</p>
       <form action="#" class="validate-js">
         <div class="form-unit">
-          <label for="unitInputDefault">Input: <mark>*</mark></label>
-          <input class="form-def field-js" id="unitInputDefault" name="unitInputDefault" type="text" placeholder="Some placeholder" required />
+          <label for="unitInputDef">Input: <mark>*</mark></label>
+          <input class="form-def field-js" id="unitInputDef" name="unitInputDef" type="text" placeholder="Some placeholder" required />
           <span class="error-feedback">Error feedback</span>
           <span class="success-feedback">Success feedback</span>
         </div>
         <div class="form-unit">
-          <label for="unitSelectDefault">Select: <mark>*</mark></label>
-          <select class="form-def field-js" id="unitSelectDefault" name="unitSelectDefault" required>
-  <!--Important! The first element must have a value of ""-->
-  <option value="">- Choose option -</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
-  <option value="4">Option 4</option>
-  <option value="5">Option 5</option>
-  <option value="6">Option 6</option>
-  <option value="7">Option 7</option>
-  <option value="8">Option 8</option>
-</select>
+          <label for="unitSelectDef">Select: <mark>*</mark></label>
+          <select class="form-def field-js" id="unitSelectDef" name="unitSelectDef" required>
+            <!--Important! The first element must have a value of ""-->
+            <option value="">- Choose option -</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+            <option value="6">Option 6</option>
+            <option value="7">Option 7</option>
+            <option value="8">Option 8</option>
+          </select>
+          <span class="error-feedback">Error feedback</span>
+          <span class="success-feedback">Success feedback</span>
+        </div>
+        <div class="form-unit">
+          <label for="unitSelectArrow">Select with arrow: <mark>*</mark></label>
+          <select class="form-def has-arrow field-js" id="unitSelectArrow" name="unitSelectArrow" required>
+            <!--Important! The first element must have a value of ""-->
+            <option value="">- Choose option -</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+            <option value="6">Option 6</option>
+            <option value="7">Option 7</option>
+            <option value="8">Option 8</option>
+          </select>
+          <div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+            </svg></div>
           <span class="error-feedback">Error feedback</span>
           <span class="success-feedback">Success feedback</span>
         </div>
         <div class="form-unit">
           <label class="form-radiocheck">
-          <input type="checkbox" name="checkbox">
-          <span>Название чекбокса</span>
-        </label>
+            <input type="checkbox" name="checkbox">
+            <span>Название чекбокса</span>
+          </label>
         </div>
         <br>
         <button class="btn-def">VALIDATE</button>
@@ -980,6 +1011,53 @@
             <span class="success-feedback">Success feedback</span>
           </div>
         </div>
+        <div class="form-group">
+          <div class="form-group__item">
+            <label for="inputGroupFive">Five <mark>*</mark></label>
+            <select class="form-def field-js" id="inputGroupFive" name="inputGroupFive" required>
+              <!--Important! The first element must have a value of ""-->
+              <option value="">- Choose option -</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+              <option value="4">Option 4</option>
+              <option value="5">Option 5</option>
+              <option value="6">Option 6</option>
+              <option value="7">Option 7</option>
+              <option value="8">Option 8</option>
+            </select>
+            <span class="error-feedback">Error feedback</span>
+            <span class="success-feedback">Success feedback</span>
+          </div>
+          <div class="form-group__item">
+            <label for="inputGroupSix">Six: <mark>*</mark></label>
+            <select class="form-def has-arrow field-js" id="inputGroupSix" name="inputGroupSix" required>
+              <!--Important! The first element must have a value of ""-->
+              <option value="">- Choose option -</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3 we have to add a lot of text for testing to make sure the correctness of cutting this text</option>
+              <option value="4">Option 4</option>
+              <option value="5">Option 5</option>
+              <option value="6">Option 6</option>
+              <option value="7">Option 7</option>
+              <option value="8">Option 8</option>
+            </select>
+            <div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+              </svg></div>
+            <span class="error-feedback">Error feedback</span>
+            <span class="success-feedback">Success feedback</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-group__item_full-width">
+            <label class="form-radiocheck">
+              <input type="checkbox" name="checkbox">
+              <span>Название чекбокса</span>
+            </label>
+          </div>
+        </div>
         <!--===--><br>
         <button class="btn-def">VALIDATE</button>
       </form>
@@ -1032,9 +1110,9 @@
             <!--developer-->
             <div class="developer">
               <a href="http://astronim.by/" target="_blank">
-              <span class="developer__label">Разработка сайта <i>—</i></span>
-              <span class="developer__logo">Astronim*Support</span>
-            </a>
+                <span class="developer__label">Разработка сайта <i>—</i></span>
+                <span class="developer__logo">Astronim*Support</span>
+              </a>
             </div>
             <!--developer end-->
           </div>

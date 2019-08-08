@@ -363,7 +363,7 @@ $form-def-border-radius: 5px !default;
 // ------ mob -----------------------------------------
 $form-def-height--mob: 4.2rem !default;
 $form-def-border-width--mob: 1px !default;
-$form-def-space-v--mob: round-float(($form-def-height--mob - $form-def-line-height--mob) / 2 - px-to-rem($form-def-border-width), 1) !default; // Следить, чтобы разница между высотой и межстрочным интервалом была четной
+$form-def-space-v--mob: round-float(($form-def-height--mob - $form-def-line-height--mob) / 2 - px-to-rem($form-def-border-width--mob), 1) !default; // Следить, чтобы разница между высотой и межстрочным интервалом была четной
 $form-def-space-vt--mob: $form-def-space-v--mob !default;
 $form-def-space-vb--mob: $form-def-space-v--mob !default;
 $form-def-space-h--mob: 1.4rem !default;

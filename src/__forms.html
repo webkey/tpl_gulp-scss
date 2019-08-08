@@ -53,7 +53,7 @@
       @@include("includes/tpl/_tpl_forms_input.html", {
       "label": "Has value:",
       "id": "inputValue",
-      "value": "Has value"
+      "value": "This is value"
       })
       @@include("includes/tpl/_tpl_forms_valid.html")
 
@@ -61,7 +61,7 @@
       @@include("includes/tpl/_tpl_forms_input.html", {
       "label": "Has value and disabled:",
       "id": "inputValueDisabled",
-      "value": "Has value",
+      "value": "This is value",
       "disabled": "disabled"
       })
       @@include("includes/tpl/_tpl_forms_valid.html")
@@ -118,7 +118,7 @@
       @@include("includes/tpl/_tpl_forms_textarea.html", {
       "label": "Has value:",
       "id": "textareaValue",
-      "value": "Has value"
+      "value": "This is value"
       })
       @@include("includes/tpl/_tpl_forms_valid.html")
 
@@ -126,7 +126,7 @@
       @@include("includes/tpl/_tpl_forms_textarea.html", {
       "label": "Has value and disabled:",
       "id": "textareaValueDisabled",
-      "value": "Has value",
+      "value": "This is value",
       "disabled": "disabled"
       })
       @@include("includes/tpl/_tpl_forms_valid.html")
@@ -153,7 +153,7 @@
 &lt;span class="success-feedback"&gt;Success feedback&lt;/span&gt;</pre>
 
     <p class="mark">Example:</p>
-    <p>Для подключения валидации форм, добавить на <b><code>&lt;form&gt;</code></b> класс <b><code>validate-js</code></b>, а на подлежащие валидации элементы форм добавить класс <b><code>field-js</code></b>.</p>
+    <p>Для подключения валидации форм, добавить на <b><code>&lt;form&gt;</code></b> класс <b><code>validate-js</code></b>, а на подлежащие валидации элементы форм добавить аттрибут <b><code>required</code></b>.</p>
     <form action="" class="validate-js">
       <label for="validateError" class="error">Default: <mark>*</mark></label>
       <input class="form-def field-js error" id="validateError" name="validateError" type="text" placeholder="Some placeholder" required="" >

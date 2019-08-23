@@ -176,12 +176,12 @@
         <span class="success-feedback">Success feedback</span>
         <!--Value-->
         <label for="inputValue">Has value: <mark>*</mark></label>
-        <input class="form-def field-js" id="inputValue" name="inputValue" type="text" placeholder="Some placeholder" value="Has value" required />
+        <input class="form-def field-js" id="inputValue" name="inputValue" type="text" placeholder="Some placeholder" value="This is value" required />
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Value and Disabled-->
         <label for="inputValueDisabled">Has value and disabled: <mark>*</mark></label>
-        <input class="form-def field-js" id="inputValueDisabled" name="inputValueDisabled" type="text" placeholder="Some placeholder" value="Has value" disabled required />
+        <input class="form-def field-js" id="inputValueDisabled" name="inputValueDisabled" type="text" placeholder="Some placeholder" value="This is value" disabled required />
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <br>
@@ -224,12 +224,12 @@
         <span class="success-feedback">Success feedback</span>
         <!--Value-->
         <label for="textareaValue">Has value: <mark>*</mark></label>
-        <textarea class="form-def field-js" id="textareaValue" name="textareaValue" placeholder="Some placeholder" required>Has value</textarea>
+        <textarea class="form-def field-js" id="textareaValue" name="textareaValue" placeholder="Some placeholder" required>This is value</textarea>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <!--Value and Disabled-->
         <label for="textareaValueDisabled">Has value and disabled: <mark>*</mark></label>
-        <textarea class="form-def field-js" id="textareaValueDisabled" name="textareaValueDisabled" placeholder="Some placeholder" disabled required>Has value</textarea>
+        <textarea class="form-def field-js" id="textareaValueDisabled" name="textareaValueDisabled" placeholder="Some placeholder" disabled required>This is value</textarea>
         <span class="error-feedback">Error feedback</span>
         <span class="success-feedback">Success feedback</span>
         <br>
@@ -250,7 +250,7 @@
 &lt;span class="error-feedback"&gt;Error feedback&lt;/span&gt;
 &lt;span class="success-feedback"&gt;Success feedback&lt;/span&gt;</pre>
       <p class="mark">Example:</p>
-      <p>Для подключения валидации форм, добавить на <b><code>&lt;form&gt;</code></b> класс <b><code>validate-js</code></b>, а на подлежащие валидации элементы форм добавить класс <b><code>field-js</code></b>.</p>
+      <p>Для подключения валидации форм, добавить на <b><code>&lt;form&gt;</code></b> класс <b><code>validate-js</code></b>, а на подлежащие валидации элементы форм добавить аттрибут <b><code>required</code></b>.</p>
       <form action="" class="validate-js">
         <label for="validateError" class="error">Default: <mark>*</mark></label>
         <input class="form-def field-js error" id="validateError" name="validateError" type="text" placeholder="Some placeholder" required="">

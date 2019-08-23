@@ -633,11 +633,6 @@ a:hover {
   text-decoration: none;
 }
 
-a[href^="javascript:"] {
-  cursor: default;
-  pointer-events: none;
-}
-
 img {
   border: none;
   vertical-align: top;
@@ -1515,6 +1510,8 @@ select.form-def.has-arrow + .select-arrow {
 @media (max-width: 639px) {
   .form-group {
     display: block;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -1537,6 +1534,8 @@ select.form-def.has-arrow + .select-arrow {
     width: auto;
     max-width: none;
     margin-bottom: 3rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

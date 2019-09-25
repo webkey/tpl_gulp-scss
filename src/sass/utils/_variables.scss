@@ -265,7 +265,13 @@ $layout-text-space--mob: #{nth($layout-page-space--mob, 1)} #{nth($layout-page-s
 $layout-flood-width: 110rem !default;
 
 
-// Inner space
+// Layout form
+// ====================================================
+// Максимальная ширина блока форм
+$layout-form-width: 48rem !default;
+
+
+// Inner spaces
 // ====================================================
 // Внутренние отступы
 $grid-space: 2.8rem 3rem !default;

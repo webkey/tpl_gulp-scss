@@ -250,25 +250,12 @@ table {
 
 /* typography elements */
 .typography {
-  $typographyClass: &;
-  $list: h2, h3, h4, h5, h6, ".h2", ".h3", ".h4", ".h5", ".h6";
-  //@each $tags in $list {
-  //  p + #{$tags},
-  //  ul + #{$tags},
-  //  ol + #{$tags},
-  //  hr + #{$tags},
-  //  table + #{$tags},
-  //  .table-auto + #{$tags} {
-  //    margin-top: 6.2rem;
-  //  }
-  //}
-
-  & > h1, & > .h1,
-  & > h2, & > .h2,
-  & > h3, & > .h3,
-  & > h4, & > .h4,
-  & > h5, & > .h5,
-  & > h6, & > .h6 {
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {
     margin-top: round-float(2.6 * $bottom-space, 1);
 
     &:first-child {
@@ -276,7 +263,7 @@ table {
     }
   }
 
-  // figure
+  // Figure
   figure {
     display: block;
     padding: 0;
@@ -302,55 +289,62 @@ table {
     }
   }
 
-  // blockquote
+  // Blockquote
   blockquote {
     display: block;
+    position: relative;
     margin: 2.5em 0;
     padding: 0;
+    @include font-normal;
+    font-size: round-float($font-size * 1.25, 1);
+    line-height: round-float($line-height * 1.2, 1);
+    color: $text-color;
+    text-align: center;
+
+    &::before {
+      content: "«";
+      display: block;
+      position: absolute;
+      margin: -0.49em 0 0 2%;
+      font-size: 10em;
+      line-height: 1;
+      text-align: left;
+      pointer-events: none;
+      opacity: 0.1;
+    }
 
     q {
       display: block;
+      position: relative;
       margin: 0;
       padding: 0 0 10px;
-      @include font-normal;
-      font-size: round-float($font-size * 1.25, 1);
-      line-height: round-float($line-height * 1.2, 1);
-      color: $text-color;
-      text-align: center;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: inherit;
 
-      &::before {
-        content: "«";
-        display: block;
-        position: absolute;
-        margin: -0.49em 0 0 2%;
-        font-size: 10em;
-        line-height: 1;
-        text-align: left;
-        pointer-events: none;
-        opacity: 0.1;
-      }
-
+      &::after,
       &::after {
         content: none;
       }
     }
 
     cite {
-      text-align: center;
       display: block;
       font-size: inherit;
       line-height: inherit;
+      text-align: center;
     }
   }
 
-  // list
+  // List
   $list-space: 2.5rem;
 
-  & > ul,
-  & > ol {
+  ul,
+  ol {
+    list-style: none;
     margin: 0 0 $bottom-space;
     padding: 0;
-    list-style: none;
 
     &:last-child {
       margin-bottom: 0;
@@ -363,9 +357,8 @@ table {
     }
   }
 
-  & > ul,
-  & > ul ul,
-  & > ol ul {
+  ul,
+  ol ul {
     & > li {
       &::before {
         content: "";
@@ -380,25 +373,23 @@ table {
 
       ul > li {
         &::before {
-          border-color: $text-color-muted;
+          border-color: lighten($text-color, 20%);
         }
 
         ul > li {
           &::before {
-            border-color: $text-color-light;
+            border-color: lighten($text-color, 40%);
           }
         }
       }
     }
   }
 
-  & > ol {
+  ol {
     counter-reset: section;
 
     & > li {
       counter-increment: section;
-      //height: 1%;
-      //overflow: hidden;
 
       &::before {
         position: relative;
@@ -413,8 +404,8 @@ table {
     }
   }
 
-  & > ul,
-  & > ol {
+  ul,
+  ol {
     ul,
     ol {
       margin: round-float($bottom-space * 0.5, 1) 0;
@@ -422,25 +413,21 @@ table {
   }
 
   // images
-  &, & > p {
-    & > img,
-    & > .layout-text img,
-    & > .layout-flood img {
+  &,
+  & > p,
+  .layout-text,
+  .layout-flood {
+    & > img {
       display: block;
-      text-align: center;
-      margin: 3rem auto 4rem;
+      margin: #{round-float($bottom-space * 1.25, 1)} auto #{round-float($bottom-space * 1.67, 1)};
       max-width: 100%;
       height: auto;
+      text-align: center;
       clear: both;
 
-      @include media("<tab") {
-        margin-top: 2.5rem;
-        margin-bottom: 3rem;
-      }
-
       @include media("<mob") {
-        margin-top: 1.5rem;
-        margin-bottom: 2rem;
+        margin-top: #{round-float($bottom-space--mob * 1.25, 1)};
+        margin-bottom: #{round-float($bottom-space--mob * 1.67, 1)};
       }
 
       &[align="left"], &.imgl {
@@ -449,17 +436,13 @@ table {
         text-align: left;
         max-width: 45%;
         margin-top: 0;
-        margin-right: 3rem;
-
-        @include media("<tab") {
-          margin-right: 2rem;
-        }
+        margin-right: #{round-float($bottom-space * 1.25, 1)};
 
         @include media("<mob") {
           float: none;
-          text-align: left;
-          max-width: none;
+          max-width: 100%;
           margin-right: auto;
+          text-align: center;
         }
       }
 
@@ -469,17 +452,13 @@ table {
         text-align: right;
         max-width: 45%;
         margin-top: 0;
-        margin-left: 3rem;
-
-        @include media("<tab") {
-          margin-left: 2rem;
-        }
+        margin-left: #{round-float($bottom-space * 1.25, 1)};
 
         @include media("<mob") {
           float: none;
-          text-align: left;
-          max-width: none;
+          max-width: 100%;
           margin-left: auto;
+          text-align: center;
         }
       }
     }

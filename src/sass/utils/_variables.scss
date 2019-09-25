@@ -64,12 +64,12 @@ $font-alt: Georgia, serif !default;
 
 // Base font size
 // ====================================================
-$font-size: 1.6rem !default;
-$line-height: 2.4rem !default;
+$font-size: 1.8rem !default;
+$line-height: 2.7rem !default;
 $letter-spacing: normal !default;
 // ------ mob -----------------------------------------
-$font-size--mob: 1.4rem !default;
-$line-height--mob: 2.0rem !default;
+$font-size--mob: 1.6rem !default;
+$line-height--mob: 2.4rem !default;
 
 
 // Heading h1
@@ -244,7 +244,9 @@ $layout-page-min-width: 32rem !default;
 // Максимальная ширина сайта
 $layout-page-max-width: 192rem !default;
 // Отступы для всего сайта
-$layout-page-space: 3rem 5rem !default;
+$layout-page-space: 3rem 4rem !default;
+$layout-page-space--tab: 2.6rem 2rem !default;
+$layout-page-space--mob: 1.3rem 1rem !default;
 
 
 // Layout text
@@ -252,7 +254,13 @@ $layout-page-space: 3rem 5rem !default;
 // Ширина текстового блока
 $layout-text-width: 80rem !default;
 // Отступы текствого блока
-$layout-text-space: 2rem 3rem !default;
+$layout-text-space: #{nth($layout-page-space, 1)} #{nth($layout-page-space, 2)} !default;
+$layout-text-space--tab: #{nth($layout-page-space--tab, 1)} #{nth($layout-page-space--tab, 2)} !default;
+$layout-text-space--mob: #{nth($layout-page-space--mob, 1)} #{nth($layout-page-space--mob, 2)} !default;
+
+
+// Layout flood
+// ====================================================
 // Максимальная ширина элементов выходящих за пределы текста
 $layout-flood-width: 110rem !default;
 

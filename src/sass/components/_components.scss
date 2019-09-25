@@ -11,7 +11,7 @@
   }
 }
 
-.section-bottom-space {
+.section-space {
   margin-bottom: $bottom-section;
 
   @include media('<mob') {
@@ -187,9 +187,9 @@
     border: 1px solid $border-color;
     padding: 2rem;
     width: $layout-page-min-width;
-    opacity: 0;
-    visibility: hidden;
     z-index: 10;
+
+    display: none;
 
     li {
       margin-bottom: 1rem;
@@ -204,8 +204,7 @@
   }
 
   li:hover > ul {
-    opacity: 1;
-    visibility: visible;
+    display: block;
   }
 }
 

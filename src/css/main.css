@@ -1108,7 +1108,7 @@ table td, table th {
 }
 
 .no-touchevents .btn-def:hover {
-  background-color: #11918c;
+  background-color: #ff5d63;
 }
 
 .btn-def:disabled, .btn-def.disabled {
@@ -2070,7 +2070,7 @@ select.form-def.has-arrow + .select-arrow {
 }
 
 .select2-container--custom .select2-results__option--highlighted[aria-selected] {
-  background-color: #11918c;
+  background-color: #ff5d63;
   color: white;
 }
 
@@ -2136,9 +2136,9 @@ select.form-def.has-arrow + .select-arrow {
 form .error + .error-feedback,
 form .error + .select2 + .error-feedback,
 form .error + .select-arrow + .error-feedback,
-form .success + .success-feedback + .error-feedback,
-form .success + .select2 + .success-feedback + .error-feedback,
-form .success + .select-arrow + .success-feedback + .error-feedback {
+form .error + .success-feedback + .error-feedback,
+form .error + .select2 + .success-feedback + .error-feedback,
+form .error + .select-arrow + .success-feedback + .error-feedback {
   display: block;
 }
 

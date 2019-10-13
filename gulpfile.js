@@ -63,7 +63,7 @@ gulp.task('htmlCompilation', function () {
  */
 gulp.task('html:buildAllPages', ['htmlCompilation'], function () {
   var pref = "all-pages";
-  return gulp.src(['!src/all-pages.html', '!src/forms.html', '!src/__*.html', '!src/_tpl_*.html', '!src/_temp_*.html', './src/*.html'])
+  return gulp.src(['!src/all-pages.html', '!src/__*.html', '!src/~*.html', '!src/_tpl_*.html', '!src/_temp_*.html', './src/*.html'])
       .pipe(index({
         // written out before index contents
         'prepend-to-output': () => `<head> <title>All pages</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0"><link rel="shortcut icon" href="favicon.ico"></head><body>`,
@@ -275,20 +275,20 @@ gulp.task('buildDist', ['cleanDist', 'html:buildAllPages', 'copyImgToDist', 'sas
       }))
       .pipe(gulp.dest(path.dist + '/js'));
 
-  gulp.src(['!src/css/temp/**/*.css', '!src/css/**/_temp_*.css', '!src/css/main.css', 'src/css/*.css'])
+  gulp.src(['!src/css/temp/**/*.css', '!src/css/temp/**/~*.css', '!src/css/**/_temp_*.css', '!src/css/main.css', 'src/css/*.css'])
       .pipe(gulp.dest(path.dist + '/css'));
 
-  gulp.src(['!src/js/temp/**/*.js', '!src/js/**/_temp_*.js', '!src/js/common.js', 'src/js/*.js'])
+  gulp.src(['!src/js/temp/**/*.js', '!src/js/temp/**/~*.js', '!src/js/**/_temp_*.js', '!src/js/common.js', 'src/js/*.js'])
       .pipe(gulp.dest(path.dist + '/js'));
 
   gulp.src('src/assets/**/*')
       .pipe(gulp.dest(path.dist + '/assets'));
 
-  gulp.src(['!src/__*.html', '!src/forms.html', '!src/_tpl_*.html', '!src/_temp_*.html', 'src/*.html'])
+  gulp.src(['!src/__*.html', '!src/~*.html', '!src/_tpl_*.html', '!src/_temp_*.html', 'src/*.html'])
       .pipe(revts()) // Добавить версии подключаемых файлов. В html добавить ключ ?rev=@@hash в место добавления версии
       .pipe(gulp.dest(path.dist));
 
-  gulp.src(['src/*.png', 'src/*.ico', 'src/.htaccess', 'src/manifest.webmanifest', 'src/*.json'])
+  gulp.src(['src/*.png', 'src/*.jpg', 'src/*.ico', 'src/.htaccess', 'src/manifest.webmanifest', 'src/*.json'])
       .pipe(gulp.dest(path.dist));
 
 });

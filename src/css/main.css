@@ -498,6 +498,11 @@ body {
   margin-right: auto;
 }
 
+.layout-form {
+  box-sizing: content-box;
+  max-width: 48rem;
+}
+
 body {
   display: -ms-flexbox;
   display: flex;
@@ -524,6 +529,10 @@ body {
 /* ==================================== */
 /* ============ TYPOGRAPHY ============ */
 /* ==================================== */
+body *::-moz-selection {
+  background-color: #ee6e73;
+  color: #50ebe5;
+}
 body *::selection {
   background-color: #ee6e73;
   color: #50ebe5;
